@@ -1,0 +1,17 @@
+{
+  "name": "jsonserver",
+  "version": "1.0.0",
+  "description": "API Server for SPORTS CONTACT",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json",
+    "json:server:remote": "json-server https://jsonplaceholder.typicode.com/sportscontactdb"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.11.2",
+    "save": "^2.3.2"
+  },
+  "devDependencies": {}
+}
