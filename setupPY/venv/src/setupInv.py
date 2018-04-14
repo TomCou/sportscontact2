@@ -21,6 +21,7 @@ from os.path import isfile, join
 import json
 from pprint import pprint
 from shutil import *
+import subprocess
 #import git
 
 
@@ -63,6 +64,9 @@ def job(t):
 
     with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
         data = json.load(data_file)
+    p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact/cmdForPush.bat', shell=True)
+    p.wait()
+    print('done')
     # repo.git.commit("commit time: "+time.localtime(secs))
     # origin = repo.remote(name='origin')
     # origin.push()
@@ -77,7 +81,7 @@ def cleanAtt(att):
             if (x - y) is 2 :
                 final=split(att,x)
 
-
+job(time.localtime(1))
 schedule.every().day.at("09:00").do(job, 'It is 09:00')
 schedule.every().day.at("10:00").do(job, 'It is 10:00')
 schedule.every().day.at("11:00").do(job, 'It is 11:00')
