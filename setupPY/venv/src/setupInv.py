@@ -44,8 +44,8 @@ def job(t):
             for theList, product in data.items(): #got the single list of items
                 ind = -1
                 for art in data[theList]: #each item in the list is a dict
-                    ind=ind+1
                     if((art['qty_hb'] > 0) or (art['qty_sn'] > 0) ):
+                        ind = ind + 1
                         #print(art['cdp'])
                         art['cdp']= art['cdp'].rstrip()#cleanAtt(art['cdp'])
                         art['id']=art['ID']
@@ -54,6 +54,10 @@ def job(t):
                         finalDict['Items'].append(art)
                         if(art['size'] is not ''):
                             checkSizeDict['Items'].append(art)
+                        if ind is 9999:
+                            break
+                if ind is 9999:
+                    break
             json.dump(finalDict,src_file)
 
 
