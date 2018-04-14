@@ -54,9 +54,9 @@ def job(t):
                         finalDict['Items'].append(art)
                         if(art['size'] is not ''):
                             checkSizeDict['Items'].append(art)
-                        if ind is 9999:
+                        if ind == 9998:
                             break
-                if ind is 9999:
+                if ind == 9998:
                     break
             json.dump(finalDict,src_file)
 
