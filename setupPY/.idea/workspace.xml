@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="367">
+              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -38,7 +38,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1103" />
+    <option name="width" value="1075" />
     <option name="height" value="1010" />
   </component>
   <component name="ProjectView">
@@ -149,10 +149,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1103" height="1010" extended-state="0" />
+    <frame x="0" y="0" width="1075" height="1010" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24655014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25306892" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
@@ -179,21 +179,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="11" />
+          <line>57</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="21" />
+          <line>59</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="22" />
+          <line>60</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -372,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        <state relative-caret-position="367">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
         </state>
       </provider>
     </entry>
