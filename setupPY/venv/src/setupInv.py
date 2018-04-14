@@ -50,7 +50,7 @@ def job(t):
                         art['cdp']= art['cdp'].rstrip()#cleanAtt(art['cdp'])
                         art['id']=art['ID']
                         del art['ID']
-                        print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
+                        #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
                         finalDict['Items'].append(art)
                         if(art['size'] is not ''):
                             checkSizeDict['Items'].append(art)
