@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+            <state relative-caret-position="248">
+              <caret line="63" column="8" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -176,23 +176,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager>
@@ -372,8 +355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        <state relative-caret-position="248">
+          <caret line="63" column="8" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
