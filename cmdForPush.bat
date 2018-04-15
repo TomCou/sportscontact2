@@ -7,6 +7,6 @@ git add --all
 
 git commit -m "this is a commitment"
 
-git push https://TomCou:dtw4571s@sportscontact.git master
+git push https://TomCou:dtw4571s@TomCou/sportscontact.git master
 
 pause
