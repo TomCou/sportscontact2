@@ -72,7 +72,7 @@ def job(t):
      #   data = json.load(data_file)
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
-    print('done')
+    print('Done: '+time.localtime(1))
     # repo.git.commit("commit time: "+time.localtime(secs))
     # origin = repo.remote(name='origin')
     # origin.push()
