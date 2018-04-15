@@ -7,5 +7,5 @@ git add --all
 
 git commit -m "this is a commitment"
 
-git push origin master
+git push https://TomCou:dtw4571s@sportscontact.biz/sportscontact.git master
 
