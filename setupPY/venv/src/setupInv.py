@@ -56,21 +56,21 @@ def job(t):
                         finalDict['Items'].append(art)
                         if(art['size'] is not ''):
                             checkSizeDict['Items'].append(art)
-                        if ind == 1000:
-                            break
-                if ind == 1000:
-                    break
+                        #if ind == 1000:
+                         #   break
+                #if ind == 1000:
+                 #   break
             json.dump(finalDict,src_file)
 
 
-    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/db.json')):
-        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact/db.json')
+    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')):
+        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')
 
-    shutil.copy2('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json','C:/Users/developmentPC/Documents/dev/sportscontact/db.json')
+    shutil.copy2('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json','C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')
 
-    with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
-        data = json.load(data_file)
-    p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact/cmdForPush.bat', shell=True)
+    #with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
+     #   data = json.load(data_file)
+    p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
     print('done')
     # repo.git.commit("commit time: "+time.localtime(secs))
