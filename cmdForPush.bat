@@ -9,3 +9,4 @@ git commit -m "this is a commitment"
 
 git push https://TomCou:dtw4571s@sportscontact.biz/sportscontact.git master
 
+pause
