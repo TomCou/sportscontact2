@@ -12,7 +12,7 @@ from inspect import currentframe, getframeinfo
 import shutil
 import os
 import glob
-import datetime
+from datetime import datetime
 import threading
 import schedule
 import time
