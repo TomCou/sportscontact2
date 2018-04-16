@@ -1,8 +1,97 @@
 # MISC
 class O:
-    sizeStRow=3
+    sizeStRow=2
     sizeStCol=5
-    cdpCol=1
+    cdpCol=0
+    maxShoesSheetRow=100
+    listOfDepartmentR=['socJR_tur_R',
+                      'socJR_ind_R',
+                      'socJR_out_R',
+                      'socAD_tur_R',
+                      'socAD_ind_R',
+                      'socAD_out_R',
+                      'socWAD_R',
+                    'baseJR_R',
+                    'baseAD_R',
+                    'cheer_R',
+                      'bbJR_R',
+                      'bbAD_R',
+                      'rugby_R',
+                      'footJR_R',
+                      'footAD_R',
+                      'courseH_R',
+                      'courseF_R',
+                      'courseJR_R',
+                      'vbH_R',
+                      'vbF_R'
+                       ]
+    listOfDepartment = ['socJR_tur',
+                         'socJR_ind',
+                         'socJR_out',
+                         'socAD_tur',
+                         'socAD_ind',
+                         'socAD_out',
+                         'socWAD',
+                        'baseJR',
+                        'baseAD',
+                        'cheer',
+                         'bbJR',
+                         'bbAD',
+                         'rugby',
+                         'footJR',
+                         'footAD',
+                         'courseH',
+                         'courseF',
+                         'courseJR',
+                         'vbH',
+                         'vbF'
+                         ]
+    dictNameOfDepNtoR = {
+                        'socJR_tur': 'socJR_tur_R',
+                        'socJR_ind':'socJR_ind_R',
+                        'socJR_out':'socJR_out_R',
+                        'socAD_tur':'socAD_tur_R',
+                        'socAD_ind':'socAD_ind_R',
+                        'socAD_out':'socAD_out_R',
+                        'socWAD':'socWAD_R',
+                        'baseJR':'baseJR_R',
+                        'baseAD':'baseAD_R',
+                        'cheer':'cheer_R',
+                        'bbJR':'bbJR_R',
+                        'bbAD':'bbAD_R',
+                        'rugby':'rugby_R',
+                        'footJR':'footJR_R',
+                        'footAD':'footAD_R',
+                        'courseH':'courseH_R',
+                        'courseF':'courseF_R',
+                        'courseJR':'courseJR_R',
+                        'vbH':'vbH_R',
+                        'vbF':'vbF_R'
+                        }
+    dictNameOfDepRtoN = {
+                        'socJR_tur_R': 'socJR_tur',
+                        'socJR_ind_R':'socJR_ind',
+                        'socJR_out_R':'socJR_out',
+                        'socAD_tur_R':'socAD_tur',
+                        'socAD_ind_R':'socAD_ind',
+                        'socAD_out_R':'socAD_out',
+                        'socWAD_R':   'socWAD',
+                        'baseJR_R':'baseJR',
+                        'baseAD_R':'baseAD',
+                        'cheer_R':'cheer',
+                        'bbJR_R':     'bbJR',
+                        'bbAD_R':     'bbAD',
+                        'rugby_R':    'rugby',
+                        'footJR_R':   'footJR',
+                        'footAD_R':   'footAD',
+                        'courseH_R':  'courseH',
+                        'courseF_R':  'courseF',
+                        'courseJR_R': 'courseJR',
+                        'vbH_R':      'vbH',
+                        'vbF_R':      'vbF'
+                        }
+    scSoulierFile='inv_soulier'
+    excelFolder = '//SCONTACTSRV/Public/invCustom/'
     DEBUG = True
     fromKevinExcelSheet=1
     fromFootprint = 2

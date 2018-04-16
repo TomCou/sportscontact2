@@ -3,6 +3,8 @@
 
 import ui
 import pip
+import opt
+o=opt.O
 #pip.main(['install', 'schedule'])
 #pip.main(['install', 'gitpython'])
 import os
@@ -24,9 +26,10 @@ from shutil import *
 import subprocess
 import csv
 import SCLIB
+import opt
 #import git
 
-excelFolder='//SCONTACTSRV/Public/invCustom/'
+#excelFolder='//SCONTACTSRV/Public/invCustom/'
 
 #rw_dir='C:/Users/developmentPC/Documents/dev/sportscontact/'
 #repo = Repo(rw_dir)
@@ -34,10 +37,10 @@ excelFolder='//SCONTACTSRV/Public/invCustom/'
 def makeInvFile(data):  # DictResAttribute):
 
     # FILE CONTROL
-    oldFile = 'inv_soccer_junior' #+ str(datetime.now()) + '.csv'
-    tempFile = excelFolder
-    tempFile = tempFile + fileName
-    rwh = ui.RWHANDLE(tempFile)
+    oldFile = o.scSoulierFile #+ str(datetime.now()) + '.csv'
+    tempFile = o.excelFolder
+    tempFile = tempFile + oldFile
+    rwh = ui.RWHANDLE(tempFile,mul=True)
     #headerFile = '.\\ui_template\\ui_ImportRessources'
     # rwh = RWHANDLE(headerFile, 0, 0, 0, 0, 0)  # ,'rb') as csvfile:
     # fieldnames = rwh.collectFromDB(typeOfData=o.listRow, rowOfKeys=0, rowOfValues=0)
@@ -133,11 +136,11 @@ def job(t):
 
 
 
+    #makeInvFile(data=data2)
 
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    makeInvFile(data=data2)
     print('Done: '+ str(datetime.now()))
     # repo.git.commit("commit time: "+time.localtime(secs))
     # origin = repo.remote(name='origin')
@@ -145,6 +148,10 @@ def job(t):
 
 
 job(time.localtime(1))
+#with open('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json', 'r') as data_file:
+ #   data2 = json.load(data_file)
+#makeInvFile(data=data2)
+
 schedule.every().day.at("09:05").do(job, 'It is 09:05')
 schedule.every().day.at("10:05").do(job, 'It is 10:05')
 schedule.every().day.at("11:05").do(job, 'It is 11:05')

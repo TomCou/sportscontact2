@@ -126,36 +126,57 @@ class RWHANDLE(object):
             nike="NIKE"
             joma="JOMA"
             adidas="ADIDAS"
+            self.listDep = o.listOfDepartment
+            self.listDepR = o.listOfDepartmentR
+            self.dictDepNvR =o.dictNameOfDepNtoR
+            self.dictDepRvN =o.dictNameOfDepRtoN
 
-            pumaW="PUMA-DIADORA_W"
-            nikeW="NIKE_W"
-            jomaW="JOMA_W"
-            adidasW="ADIDAS_W"
             try:
                 self.wb = openpyxl.load_workbook(filePath + '.xlsx', data_only=True)  # ,formatting_info=True)
                 # debug(str(e) + " I am in ui, __init__()")
                 # self.wb = self.xls2xlsx(filePath + '.xls')
                 self.rss = {}
-                self.rss[nike] = self.wb.get_sheet_by_name(nikeW)
-                self.rss[puma] = self.wb.get_sheet_by_name(pumaW)
-                self.rss[adidas] = self.wb.get_sheet_by_name(adidasW)
-                self.rss[joma] = self.wb.get_sheet_by_name(jomaW)
+                for nameR in self.listDepR:
+#                    self.rss[name] = self.wb[dictDepNvW[name]]
+                    #abc=self.dictDepRvN[nameR]
+                    tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR]) #self.wb[name]
+                    tmprs.title = nameR
+                    self.rss[nameR] =  tmprs #self.wb[name]
+
+
+                #self.rss[puma] = self.wb.get_sheet_by_name(pumaW)
+                #self.rss[adidas] = self.wb.get_sheet_by_name(adidasW)
+                #self.rss[joma] = self.wb.get_sheet_by_name(jomaW)
+                # self.rss[nike] = self.wb.get_sheet_by_name(nikeW)
+                # self.rss[puma] = self.wb.get_sheet_by_name(pumaW)
+                # self.rss[adidas] = self.wb.get_sheet_by_name(adidasW)
+                #self.rss.get(joma).title(joma)
                 #for file in self.rss:
                 #dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
-                for name in range(len(self.rss)):
-                    for nSheet in dataList[name]:
-                        self.rss[name][nSheet].title(name)
+                # for name in self.rss:
+                #     for nSheet in self.rss[name]:
+                #
+                #         nSheet.title(name)
+                self.wss={}
+                for name in self.listDep:
+                    tmpws=self.wb.copy_worksheet(self.rss[self.dictDepNvR[name]])
+                    tmpws.title = name
+                    self.wss[name] = tmpws #self.wb.copy_worksheet(self.rss[dictDepWvN[nameW]])
 
-                self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
-                self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
-                self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
-                self.wss[jomaW] = self.wb.copy_worksheet(self.rss[joma])
-                for name in range(len(self.wss)):
-                    for nSheet in dataList[name]:
-                        self.wss[name][nSheet].title(name)
-                self.rs = self.rss[nike]
-                self.ws = self.wss[nikeW]
-            #                self.ws.title = 'mainTracker'
+
+                # self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
+                # self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
+                # self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
+                # self.wss[jomaW] = self.wb.copy_worksheet(self.rss[joma])
+                # for name in self.wss:
+                #     for nSheet in self.rss[name]:
+                #         self.wss[name][nSheet].title(name)
+                self.rs = self.rss['socJR_tur_R']
+                self.ws = self.wss['socJR_tur']
+
+                #self.saveFile()
+
+
             except Exception as e:
                 debug(str(e) + ", Location -- ui, RWHANDLE, __init__()")
             #     self.wb = self.xls2xlsx(filePath + '.xls')
@@ -172,19 +193,22 @@ class RWHANDLE(object):
         cdp= dict['cdp']
         size=dict['size']
         totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
-        for nSheet in self.rss:
-            self.rs = self.rss[nSheet]
-            try:
-                ind_r = self.fetchRinC(cdp,o.cdpCol,0)
-                ind_c = self.fetchCinR(size,0,o.sizeStCol)
-                if(ind_r > 0):
+        try:
+            for nSheet in self.rss:
+                self.rs = self.rss[nSheet]
+                try:
+                    ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
+                    if(ind_r > 0):
+                        ind_c = self.fetchCinR(size,0,o.sizeStCol)
                         if(ind_c > 0):
                             sheetName=nSheet+'_W'
+                            self.ws = self.wss[sheetName]
+                            self.setSingle(ind_r,ind_c,int(totalQty))
                             break
-            except Exception as e:
-                debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
-        self.ws = self.wss[sheetName]
-        self.setSingle(ind_r,ind_c,int(totalQty))
+                except Exception as e:
+                    debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+        except Exception as e:
+            debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
 
     def writeItems(self,filePath):
         ### Open source workbook ###
@@ -417,7 +441,7 @@ class RWHANDLE(object):
             refValue = self.getCell(startIndex,0)
             for row in range(startIndex, self.rs.max_row):
                 try:
-                    if self.getCell(row, colKey).value == refValue:
+                    if self.getCell(row, colKey).value:
                         count += 1
                     else:
                         break
@@ -453,48 +477,55 @@ class RWHANDLE(object):
         return newFile
     def saveFile(self):
         current = os.getcwd()
-        a = self.wb.get_sheet_by_name("mainTrackerRead")
-        try:
-            a1 = self.wb.get_sheet_by_name("mainTrackerRead1")
-            self.wb.remove_sheet(a1)
-        except Exception as e:
-            debug('No mainTrackerRead1'+ str(e))
-            pass
-        self.wb.remove_sheet(a)
-        if o.itemDatabase in self.filePath:
-            if self.newItemFile is False:
-                self.filePath=self.filePath+str(self.po)
+        # a = self.wb.get_sheet_by_name("mainTrackerRead")
+        # try:
+        #     a1 = self.wb.get_sheet_by_name("mainTrackerRead1")
+        #     self.wb.remove_sheet(a1)
+        # except Exception as e:
+        #     debug('No mainTrackerRead1'+ str(e))
+        #     pass
         self.wb.save(self.filePath+'.xlsx')
+        for nameR in self.listDepR:
+            try:
+                abc=self.wb.get_sheet_by_name(nameR)
+                self.wb.remove(abc)
+            except:
+                self.wb.remove(nameR)
+        self.wb.save(self.filePath + '.xlsx')
+
+        # if o.itemDatabase in self.filePath:
+        #     if self.newItemFile is False:
+        #         self.filePath=self.filePath+str(self.po)
         self.wb.close()
         debug(self.filePath+ " has saved successfully.")
-        book = openpyxl.load_workbook(self.filePath + '.xlsx')
-        try:
-            theday = datetime.datetime.now()
-            today = "%s-%s-%s" % (theday.month, theday.day, theday.year)
-            backupPath = current + os.sep + 'Backup' + os.sep
-            sheet=book
-            if o.DEBUG:
-                if self.filePath == o.infoFile:
-                    sheet.save(backupPath + 'Backup' + today + 'currentStatusInfo.xlsx')
-                    sheet.save(o.infoFile+'_back.xlsx')
-                elif self.filePath ==o.orderDatabase:
-                    sheet.save(backupPath + 'Backup' + today + 'orderTracker.xlsx')
-                    sheet.save(o.orderDatabase + '_back.xlsx')
-                elif o.itemDatabase in self.filePath:
-                    sheet.save(backupPath + 'Backup' + '_PO' + str(self.po) + '.xlsx')
-                    sheet.save(o.itemDatabase + '_back.xlsx')
-            else:
-                if self.filePath == o.infoFile:
-                    sheet.save(backupPath + 'Backup' + today + 'currentStatusInfo.xlsx')
-                elif self.filePath == o.orderDatabase:
-                    sheet.save(backupPath + 'Backup' + today + 'orderTracker.xlsx')
-                elif o.itemDatabase in self.filePath:
-                    sheet.save(backupPath + 'Backup' +'_PO'+str(self.po)+'.xlsx')
-            sheet.close()
-            book.close()
-            debug(self.filePath + "_back has saved successfully.")
-        except Exception as e:
-            debug("Saving didnt work: " + str(e)+', Location ui.RWHADLE.saveFile()')
+        # book = openpyxl.load_workbook(self.filePath + '.xlsx')
+        # try:
+        #     theday = datetime.datetime.now()
+        #     today = "%s-%s-%s" % (theday.month, theday.day, theday.year)
+        #     backupPath = current + os.sep + 'Backup' + os.sep
+        #     sheet=book
+        #     if o.DEBUG:
+        #         if self.filePath == o.infoFile:
+        #             sheet.save(backupPath + 'Backup' + today + 'currentStatusInfo.xlsx')
+        #             sheet.save(o.infoFile+'_back.xlsx')
+        #         elif self.filePath ==o.orderDatabase:
+        #             sheet.save(backupPath + 'Backup' + today + 'orderTracker.xlsx')
+        #             sheet.save(o.orderDatabase + '_back.xlsx')
+        #         elif o.itemDatabase in self.filePath:
+        #             sheet.save(backupPath + 'Backup' + '_PO' + str(self.po) + '.xlsx')
+        #             sheet.save(o.itemDatabase + '_back.xlsx')
+        #     else:
+        #         if self.filePath == o.infoFile:
+        #             sheet.save(backupPath + 'Backup' + today + 'currentStatusInfo.xlsx')
+        #         elif self.filePath == o.orderDatabase:
+        #             sheet.save(backupPath + 'Backup' + today + 'orderTracker.xlsx')
+        #         elif o.itemDatabase in self.filePath:
+        #             sheet.save(backupPath + 'Backup' +'_PO'+str(self.po)+'.xlsx')
+        #     sheet.close()
+        #     book.close()
+        #     debug(self.filePath + "_back has saved successfully.")
+        # except Exception as e:
+        #     debug("Saving didnt work: " + str(e)+', Location ui.RWHADLE.saveFile()')
     def setSingle(self, rowKey=0, colKey=0,value=0):
         cr = str(get_column_letter(colKey + 1)) + str(rowKey + 1)
         try:
@@ -518,7 +549,7 @@ class RWHANDLE(object):
             self.setSingle(rowValue,col,rman.getAtt(self.getSingle(rowKey=0,colKey=col)))
     def fetchRinC(self,target,colOfKey,index):## recursive index starts at 0
         try:
-            if index>=self.countRows(colOfKey):
+            if index>o.maxShoesSheetRow: #=self.countRows(colOfKey,index):
                 return -1
             elif str(target) != str(self.getSingle(index,colOfKey)):
                 return self.fetchRinC(target,colOfKey,index+1)
