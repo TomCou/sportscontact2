@@ -1,0 +1,162 @@
+# MISC
+class O:
+    sizeStRow=3
+    sizeStCol=5
+    cdpCol=1
+    DEBUG = True
+    fromKevinExcelSheet=1
+    fromFootprint = 2
+    fromWebCheckout=3
+    fromHalSS=4
+    fromMakeProcPDF=5
+    fromMainList = 6
+    colOfPOID=3
+    defaultRowID = 8
+    getInfo = 8 # if you want the current order id and stuff
+    newOrder=10
+    update=11
+    PO='PO'
+    kevinCheck='DkevinSS'
+    fpCheck='UfootPrint'
+    wcCheck='UwebCheckout'
+    halCheck='UhalSS'
+    procPDFCheck='UmakeProcPDF'
+    rowID='rowID'
+    uploadButton=12
+    colOfOrderRowID =2
+    list='list'
+    single='single'
+    dicto='dicto'
+    apiCol=6
+    apiRow=2
+    listOfList='listOfList'
+    dictoOfList='dictoOfList'
+    listRow='listRow'
+    listCol = 'listCol'
+    listOfRes='listOfRes'
+    deleteOrder=13
+    colRTList=6
+    colRTIDList = 7
+    colHomeList=4
+    colHomeAlias=5
+    colOfLastResID=1
+    matchColValue='matchColValue'
+    fp_pass="aqaSWS#1erd"
+    fp_user="tcousine"
+    wc_pass="scooter"
+    wc_user="3474142"
+    bc_pass = ""
+    bc_user = "tommy.cousineau@unb.ca"
+    defaultColumn=1
+    sg=1
+    text=2
+    itFirstRow=31
+    itGrSep=100
+    qtyC=1
+    numbOfDescriptiveLineForEachItemChild=8
+
+
+    if DEBUG:
+        mspr_folder='.\\MSReceivedGoods\\MSPR\\unprocessed\\'
+        orderDatabase = ".\\ui_database\\ui_orderTracker"
+        itemDatabase = ".\\ui_database\\ui_itemTrackerFiles\\"
+        infoFile = ".\\ui_database\\ui_currentStatusInfo"
+        attachFileFolder="\\MSReceivedGoods\\MSPR\\unprocessed\\"
+        csvFolder='.\\ui_database\\ui_webcheckout\\'
+        emailTo=['Tcousine:','kennye:']
+        dontEmailTo=['hdalzell:','dkell:',"rking:","kwm:"]
+#        emailTo2='kennye'
+    else:
+        mspr_folder = 'C:\\Users\\tcousine\\Desktop\\MSReceivedGoods\\MSPR\\'
+        orderDatabase = ".\\ui_database\\ui_orderTracker"
+        itemDatabase = ".\\ui_database\\ui_itemTrackerFiles\\"
+        infoFile = ".\\ui_database\\ui_currentStatusInfo"
+        csvFolder = '.\\ui_database\\ui_webcheckout\\'
+        emailTo = ['Tcousine:', 'kennye:']
+        dontEmailTo = ['hdalzell:', 'dkell:', "rking:", "kwm:"]
+    sampleFile = 'currentOrder.xlsx'
+
+
+
+    def throwError(prob,value,frameinfo):
+        print(prob, value)
+        print("Come and Fix Me Here:", frameinfo.filename, frameinfo.lineno)
+
+
+def ImportCheck():
+
+    import pip
+    import subprocess
+    import os
+    import sys
+
+    def install(package):
+        try:
+        #pip.main(['install', package])
+            subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
+        except:
+            print(package+" didnt work")
+
+    # Example
+    #if __name__ == '__main__':
+    #   install('argh')
+
+    #pywinauto
+    # try:
+    #     import pywinauto
+    # except ImportError:
+    #     install('pywinauto')
+
+
+    #datetime
+    try:
+        import datetime
+    except ImportError:
+        install('datetime')
+
+    #csv
+    try:
+        import csv
+    except ImportError:
+        install('csv')
+
+    #tkinter
+    try:
+        # Python3
+        import tkinter
+    except ImportError:
+        # Python2
+        import Tkinter
+
+
+    #xlrd
+    try:
+        import xlrd
+    except ImportError:
+        install('xlrd')
+
+    #os
+    try:
+        import os
+    except ImportError:
+        install('os')
+
+    #xlutils
+    try:
+        import xlutils
+    except ImportError:
+        install('xlutils')
+        install('xlwt')
+
+    #openpyxl
+    try:
+        import openpyxl
+    except ImportError:
+        install('openpyxl')
+
+
+    #selenium
+    try:
+        import selenium
+    except ImportError:
+        install('selenium')
