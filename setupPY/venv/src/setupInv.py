@@ -115,64 +115,64 @@ while True:
     time.sleep(60)  # wait one minute
 
 
-    def makeInvFile(data):  # DictResAttribute):
-        fileName = 'inv_' + str(datetime.now()) + '.csv'
-        tempFile = csvFolder
-        #newFile = (tempFile.split('.'))[1] + fileName
-        tempFile = tempFile + fileName
-        headerFile = '.\\ui_template\\ui_ImportRessources'
-        #rwh = RWHANDLE(headerFile, 0, 0, 0, 0, 0)  # ,'rb') as csvfile:
-        #fieldnames = rwh.collectFromDB(typeOfData=o.listRow, rowOfKeys=0, rowOfValues=0)
-        # print(listOfHeaders)
-        result = multikeysort(data['Items'], ['cdp', 'size', 'price'])
-        fieldnames = ['cdp','size', 'id', 'qty_hb', 'qty_ns','price']
-        # readHeader = csv.DictReader(csvfile)#'.\\ui_template\\ui_ImportRessources.csv')
-        with open(tempFile, 'w') as csvfile2:
-            writer = csv.DictWriter(csvfile2, fieldnames=fieldnames)
-            writer.writeheader()
-            for item in result:
-                # writer = csv.DictWriter(csvfile2, fieldnames=rman.getDictKeys())
-                if isfloat(item['size']):
-                    writer.writerow(item)
-                elif isint(item['size']):
-                    writer.writerow(item)
-                # {'first_name': 'Baked', 'last_name': 'Beans'})
-                # writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-                # writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+def makeInvFile(data):  # DictResAttribute):
+    fileName = 'inv_' + str(datetime.now()) + '.csv'
+    tempFile = csvFolder
+    #newFile = (tempFile.split('.'))[1] + fileName
+    tempFile = tempFile + fileName
+    headerFile = '.\\ui_template\\ui_ImportRessources'
+    #rwh = RWHANDLE(headerFile, 0, 0, 0, 0, 0)  # ,'rb') as csvfile:
+    #fieldnames = rwh.collectFromDB(typeOfData=o.listRow, rowOfKeys=0, rowOfValues=0)
+    # print(listOfHeaders)
+    result = multikeysort(data['Items'], ['cdp', 'size', 'price'])
+    fieldnames = ['cdp','size', 'id', 'qty_hb', 'qty_ns','price']
+    # readHeader = csv.DictReader(csvfile)#'.\\ui_template\\ui_ImportRessources.csv')
+    with open(tempFile, 'w') as csvfile2:
+        writer = csv.DictWriter(csvfile2, fieldnames=fieldnames)
+        writer.writeheader()
+        for item in result:
+            # writer = csv.DictWriter(csvfile2, fieldnames=rman.getDictKeys())
+            if isfloat(item['size']):
+                writer.writerow(item)
+            elif isint(item['size']):
+                writer.writerow(item)
+            # {'first_name': 'Baked', 'last_name': 'Beans'})
+            # writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
+            # writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
-        #return tempFile
+    #return tempFile
 
 
-    def isfloat(x):
-        try:
-            a = float(x)
-        except ValueError:
-            return False
+def isfloat(x):
+    try:
+        a = float(x)
+    except ValueError:
+        return False
+    else:
+        return True
+
+
+def isint(x):
+    try:
+        a = float(x)
+        b = int(a)
+    except ValueError:
+        return False
+    else:
+        return a == b
+
+
+def multikeysort(items, columns):
+    from operator import itemgetter
+    comparers = [((itemgetter(col[1:].strip()), -1) if col.startswith('-') else (itemgetter(col.strip()), 1)) for
+                 col in columns]
+
+    def comparer(left, right):
+        for fn, mult in comparers:
+            result = cmp(fn(left), fn(right))
+            if result:
+                return mult * result
         else:
-            return True
+            return 0
 
-
-    def isint(x):
-        try:
-            a = float(x)
-            b = int(a)
-        except ValueError:
-            return False
-        else:
-            return a == b
-
-
-    def multikeysort(items, columns):
-        from operator import itemgetter
-        comparers = [((itemgetter(col[1:].strip()), -1) if col.startswith('-') else (itemgetter(col.strip()), 1)) for
-                     col in columns]
-
-        def comparer(left, right):
-            for fn, mult in comparers:
-                result = cmp(fn(left), fn(right))
-                if result:
-                    return mult * result
-            else:
-                return 0
-
-        return sorted(items, cmp=comparer)
+    return sorted(items, cmp=comparer)
