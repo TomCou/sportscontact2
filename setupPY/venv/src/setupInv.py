@@ -53,9 +53,9 @@ def job(t):
                         del art['price']
                         del art['car']
                         #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
-                        finalDict['Items'].append(art)
-                        if(art['size'] is not ''):
-                            checkSizeDict['Items'].append(art)
+                    finalDict['Items'].append(art)
+                        #if(art['size'] is not ''):
+                         #   checkSizeDict['Items'].append(art)
                         #if ind == 1000:
                          #   break
                 #if ind == 1000:
