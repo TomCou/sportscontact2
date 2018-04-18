@@ -110,7 +110,8 @@ def job(t):
                     if((art['qty_hb'] > 0) or (art['qty_sn'] > 0) ):
                         ind = ind + 1
                         #print(art['cdp'])
-                        art['cdp']= art['cdp'].rstrip()#cleanAtt(art['cdp'])
+                        art['cdp']= art['cdp'].strip(" ")
+                        art['cdp']=art['cdp'].replace(' ','')#cleanAtt(art['cdp'])
                         art['id']=art['ID']
                         del art['ID']
                         #del art['price']
