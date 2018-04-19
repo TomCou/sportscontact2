@@ -13,7 +13,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5130494">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-124">
@@ -25,13 +25,12 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="opt.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="opt.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
+                <state relative-caret-position="85">
                   <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
                   <folding>
-                    <element signature="e#101#790#0" />
                     <element signature="e#716#1424#0" />
                     <element signature="e#1348#2296#0" />
                     <element signature="e#2141#2995#0" />
@@ -141,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="873" />
     <option name="height" value="1010" />
   </component>
@@ -567,19 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding>
-            <element signature="e#101#790#0" />
-            <element signature="e#716#1424#0" />
-            <element signature="e#1348#2296#0" />
-            <element signature="e#2141#2995#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/SCLIB.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -647,6 +633,18 @@
           <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <element signature="e#716#1424#0" />
+            <element signature="e#1348#2296#0" />
+            <element signature="e#2141#2995#0" />
           </folding>
         </state>
       </provider>
