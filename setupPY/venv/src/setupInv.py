@@ -125,7 +125,8 @@ def job(t):
                         #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
                         finalDict['Items'].append(art)
                         # SORT
-                        orgDict art['niv2'] is not ''):
+                        #if art['sdep'] is "SOULIERS" or "SOULIER":
+                         #   orgDict[art['dep']][art['niv1']][art['niv2']].append(art)
                          #   checkSizeDict['Items'].append(art)
 
                         #if ind == 1000:
