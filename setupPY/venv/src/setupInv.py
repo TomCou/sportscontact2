@@ -34,10 +34,13 @@ import opt
 #rw_dir='C:/Users/developmentPC/Documents/dev/sportscontact/'
 #repo = Repo(rw_dir)
 
-def makeInvFile(data):  # DictResAttribute):
+def makeInvFile(data,chORsn):  # DictResAttribute):
 
     # FILE CONTROL
-    oldFile = o.scSoulierFile #+ str(datetime.now()) + '.csv'
+    if (chORsn is "SN"):
+        oldFile = o.scSoulierFileSN  # + str(datetime.now()) + '.csv'
+    elif (chORsn is "CH"):
+        oldFile = o.scSoulierFileCH  # + str(datetime.now()) + '.csv'
     tempFile = o.excelFolder
     tempFile = tempFile + oldFile
     rwh = ui.RWHANDLE(tempFile,mul=True)
@@ -46,7 +49,7 @@ def makeInvFile(data):  # DictResAttribute):
     # fieldnames = rwh.collectFromDB(typeOfData=o.listRow, rowOfKeys=0, rowOfValues=0)
     # print(listOfHeaders)
     for x in data['Items']:
-        rwh.mulSheetWrite(x)
+        rwh.mulSheetWrite(x,chORsn)
 
 
 
@@ -96,6 +99,9 @@ def job(t):
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/exportinvtxt.txt')
     aList = [];
     finalDict = {'Items':aList};
+
+    orgDict = {'': [],'':[]};
+
     checkSizeList = [];
     checkSizeDict = {'Items':checkSizeList};
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')):
@@ -118,8 +124,10 @@ def job(t):
                         #del art['car']
                         #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
                         finalDict['Items'].append(art)
-                        #if(art['size'] is not ''):
+                        # SORT
+                        orgDict art['niv2'] is not ''):
                          #   checkSizeDict['Items'].append(art)
+
                         #if ind == 1000:
                          #   break
                 #if ind == 1000:
@@ -137,7 +145,8 @@ def job(t):
 
 
 
-    #makeInvFile(data=data2)
+    #makeInvFile(data=data2,"CH") #charlesbourg
+    #makeInvFile(data=data2,"SN") #saint-nicolas
 
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()

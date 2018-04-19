@@ -189,10 +189,15 @@ class RWHANDLE(object):
             #     if self.wr == -1:
             #         self.wr=self.countRows(0)
             #         debug('Writting row: '+str(self.wr))
-    def mulSheetWrite(self,dict):
+    def mulSheetWrite(self,dict,chORsn):
         cdp= dict['cdp']
         size=dict['size']
-        totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
+        if(chORsn is "SN"):
+            totalQty = int(dict['qty_sn'])
+        elif(chORsn is "CH"):
+            totalQty = int(dict['qty_hb'])
+
+        #totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
         try:
             for nSheet in self.rss:
                 self.rs = self.rss[nSheet]
