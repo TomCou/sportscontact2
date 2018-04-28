@@ -100,7 +100,7 @@ def job(t):
     aList = [];
     finalDict = {'Items':aList};
 
-    orgDict = {'': [],'':[]};
+    orgDict = {}#'dep':{},'sdep':{},'niv1':{},'niv2':{}};
 
     checkSizeList = [];
     checkSizeDict = {'Items':checkSizeList};
@@ -120,14 +120,89 @@ def job(t):
                         art['cdp']=art['cdp'].replace(' ','')#cleanAtt(art['cdp'])
                         art['id']=art['ID']
                         del art['ID']
-                        #del art['price']
-                        #del art['car']
+                        art['niv1']=art['niv1'].strip(" ")
+                        art['niv2'] = art['niv2'].strip(" ")
+                        art['dep'] = art['dep'].strip(" ")
+                        art['sdep'] = art['sdep'].strip(" ")
+
+                        art['niv1'] = art['niv1'].replace(' ', '')  # cleanAtt(art['cdp'])
+                        art['niv2'] = art['niv2'].replace(' ', '')  # cleanAtt(art['cdp'])
+                        art['dep'] = art['dep'].replace(' ', '')  # cleanAtt(art['cdp'])
+                        art['sdep'] = art['sdep'].replace(' ', '')  # cleanAtt(art['cdp'])
+
+                        try:
+                            while(1):
+                                if art['dep'] in orgDict:
+                                    if art['sdep'] in orgDict[art['dep']]:
+                                        # WE KNOW SDEP IS IN
+                                        if art['niv1'] != '':
+                                            # WE KNOW SDEP IS A DICT
+                                            if art['niv1'] in orgDict[art['dep']][art['sdep']]:
+                                                # WE KNOW NIV1 IS IN
+                                                if art['niv2'] != '':
+                                                    # WE KNOW NIV1 IS A DICT
+                                                    if art['niv2'] in orgDict[art['dep']][art['sdep']][art['niv1']]:
+                                                        orgDict[art['dep']][art['sdep']][art['niv1']][art['niv2']].append(art)
+                                                        break
+                                                    else:
+                                                        orgDict[art['dep']][art['sdep']][art['niv1']][art['niv2']]=[]
+                                                        orgDict[art['dep']][art['sdep']][art['niv1']][art['niv2']].append(art)
+                                                        break
+                                                else:
+                                                    # WE KNOW NIV1 IS IN AS A LIST OR DICT, FIND TYPE, APPEND OBJECT, AND BREAK
+                                                    if type(orgDict[art['dep']][art['sdep']][art['niv1']]) is dict:
+                                                        # IF ITS A DICT THEN WE KNOW THERE IS OBJECTS WITH NIV2, SO ADD IT IN MISC
+                                                        if 'MISC' in orgDict[art['dep']][art['sdep']][art['niv1']]:
+                                                            orgDict[art['dep']][art['sdep']][art['niv1']]['MISC'].append(art)
+                                                            break
+                                                        else:
+                                                            orgDict[art['dep']][art['sdep']][art['niv1']]['MISC']=[]
+                                                            orgDict[art['dep']][art['sdep']][art['niv1']]['MISC'].append(art)
+                                                            break
+                                                    elif type(orgDict[art['dep']][art['sdep']][art['niv1']]) is list:
+                                                        orgDict[art['dep']][art['sdep']][art['niv1']].append(art)
+                                                        break
+                                            else:
+                                                # NIV1 IS NOT IN, DO WE ADD IT AS A LIST OR DICT? DEPENDS ON NIV2
+                                                if art['niv2'] == '':  # ADD IT AS LIST, APPEND OBJECT, AND BREAK
+                                                    # BUT MAYBE IN THE FUTURE THERE WILL BE THE SAME NIV1 WITH A NIV2 SO WE CAN'T ADD IT AS A LIST
+                                                    orgDict[art['dep']][art['sdep']][art['niv1']] = {}
+                                                    orgDict[art['dep']][art['sdep']][art['niv1']]['MISC'] = []
+                                                    orgDict[art['dep']][art['sdep']][art['niv1']]['MISC'].append(art)
+                                                    break
+                                                else:# ADD IT AS DICT, AND CONTINUE
+                                                    orgDict[art['dep']][art['sdep']][art['niv1']]={}
+
+                                        else:
+                                            # WE KNOW SDEP IS IN AS A DICT, BUT THERE IS NO NIV1 SO APPEND OBJECT TO MISC, AND BREAK
+                                            if 'MISC' in orgDict[art['dep']][art['sdep']]:
+                                                orgDict[art['dep']][art['sdep']]['MISC'].append(art)
+                                                break
+                                            else:
+                                                orgDict[art['dep']][art['sdep']]['MISC'] = []
+                                                orgDict[art['dep']][art['sdep']]['MISC'].append(art)
+                                                break
+                                    else:
+                                        # SDEP IS NOT IN, WE ADD IT AS A DICT
+                                        if art['niv1'] == '': # ADD IT AS DICT, APPEND OBJECT, AND BREAK
+                                            orgDict[art['dep']][art['sdep']] = {}
+                                            orgDict[art['dep']][art['sdep']]['MISC'] = []
+                                            orgDict[art['dep']][art['sdep']]['MISC'].append(art)
+                                            break
+                                        else:# ADD IT AS DICT, AND CONTINUE
+                                            orgDict[art['dep']][art['sdep']]={}
+                                else:
+                                    orgDict[art['dep']]={}
+                        except:
+                            print(art)
+
                         #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
                         finalDict['Items'].append(art)
                         # SORT
                         #if art['sdep'] is "SOULIERS" or "SOULIER":
-                         #   orgDict[art['dep']][art['niv1']][art['niv2']].append(art)
-                         #   checkSizeDict['Items'].append(art)
+
+                        #orgDict[art['dep']][art['sdep']][art['niv1']][art['niv2']].append(art)
+                        #checkSizeDict['Items'].append(art)
 
                         #if ind == 1000:
                          #   break
