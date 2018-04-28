@@ -97,13 +97,24 @@ def job(t):
 
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/dbPre.json')
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/exportinvtxt.txt')
-    aList = [];
-    finalDict = {'Items':aList};
+    aList = []
+    finalDict = {'Items':aList}
+    orgDict = {}
+    femmeOptions=['N1000538','N1000642','N1000512']
+    hommeOptions=['N1000513']
+    juniorOptions=['N1000631','N1000540','N1000544','N1000632','N1000644']
+    juniorGirlOptions=['N1000553']
+    adulteOptions=['N1000552','N1000539','N1000643','N1000506']
+    femmeStringOptions = ['FEMME', 'WMN', 'WMN\'S', 'WMNS']
+    hommeStringOptions = ['HOMME', 'MEN']
+    juniorStringOptions = ['JR', 'JUNIOR']
+    adulteStringOptions = [' AD ','ADULTE','ADULTS','ADULT']
+    trapOption =['LASTIC','HELLO']
 
-    orgDict = {}#'dep':{},'sdep':{},'niv1':{},'niv2':{}};
 
-    checkSizeList = [];
-    checkSizeDict = {'Items':checkSizeList};
+
+    checkSizeList = []
+    checkSizeDict = {'Items':checkSizeList}
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')):
         os.remove('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')
     #data = json.load(open('dbPre.json'))
@@ -118,8 +129,6 @@ def job(t):
                         #print(art['cdp'])
                         art['cdp']= art['cdp'].strip(" ")
                         art['cdp']=art['cdp'].replace(' ','')#cleanAtt(art['cdp'])
-                        art['id']=art['ID']
-                        del art['ID']
                         art['niv1']=art['niv1'].strip(" ")
                         art['niv2'] = art['niv2'].strip(" ")
                         art['dep'] = art['dep'].strip(" ")
@@ -129,6 +138,64 @@ def job(t):
                         art['niv2'] = art['niv2'].replace(' ', '')  # cleanAtt(art['cdp'])
                         art['dep'] = art['dep'].replace(' ', '')  # cleanAtt(art['cdp'])
                         art['sdep'] = art['sdep'].replace(' ', '')  # cleanAtt(art['cdp'])
+
+                        ## CHANGE EQUIVALENT WORDS AND CODES AND STUFF
+                        # NIVEAU 1
+
+                        for x in hommeOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'HOMME'
+                                break
+                        for x in femmeOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'FEMME'
+                                break
+                        for x in juniorOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'JUNIOR'
+                                break
+                        for x in juniorGirlOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'WJUNIOR'
+                                break
+                        for x in adulteOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'HOMME'
+                                break
+
+                        # NIVEAU 2
+                        if art['niv2'] is 'N2000698':
+                            art['niv2'] = 'OUTDOOR'
+                        elif art['niv2'] is 'N2000700':
+                            art['niv2'] = 'TURF'
+                        elif art['niv2'] is 'N2000696':
+                            art['niv2'] = 'INDOOR'
+                        # id
+                        art['id']=art['ID']
+                        del art['ID']
+
+                        # TRY TO FIND NIVEAU 1 AND 2 IN CAR IF NIV1 AND NIV2 ARE ''
+                        if art['niv1'] is '':
+                            for x in femmeStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv1'] = 'FEMME'
+                                    break
+                        if art['niv1'] is '':
+                            for x in hommeStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv1'] = 'HOMME'
+                                    break
+                        if art['niv1'] is '':
+                            for x in juniorStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv1'] = 'JUNIOR'
+                                    break
+                        if art['niv1'] is '':
+                            for x in adulteStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv1'] = 'HOMME'
+                                    break
+
 
                         try:
                             while(1):
