@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+            <state relative-caret-position="134">
+              <caret line="277" selection-start-line="277" selection-end-line="277" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
               </folding>
@@ -260,11 +260,6 @@
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
           <line>176</line>
           <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>277</line>
-          <option name="timeStamp" value="97" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -620,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+        <state relative-caret-position="134">
+          <caret line="277" selection-start-line="277" selection-end-line="277" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
           </folding>
