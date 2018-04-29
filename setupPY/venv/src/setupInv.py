@@ -27,7 +27,6 @@ import subprocess
 import csv
 import SCLIB
 import opt
-#import git
 
 #excelFolder='//SCONTACTSRV/Public/invCustom/'
 
@@ -35,19 +34,15 @@ import opt
 #repo = Repo(rw_dir)
 
 def makeInvFile(data,chORsn):  # DictResAttribute):
-
     # FILE CONTROL
     if (chORsn is "SN"):
-        oldFile = o.scSoulierFileSN  # + str(datetime.now()) + '.csv'
+        oldFile = o.scSoulierFileSN
     elif (chORsn is "CH"):
-        oldFile = o.scSoulierFileCH  # + str(datetime.now()) + '.csv'
+        oldFile = o.scSoulierFileCH
     tempFile = o.excelFolder
     tempFile = tempFile + oldFile
     rwh = ui.RWHANDLE(tempFile,mul=True)
-    #headerFile = '.\\ui_template\\ui_ImportRessources'
-    # rwh = RWHANDLE(headerFile, 0, 0, 0, 0, 0)  # ,'rb') as csvfile:
-    # fieldnames = rwh.collectFromDB(typeOfData=o.listRow, rowOfKeys=0, rowOfValues=0)
-    # print(listOfHeaders)
+
     for x in data['Items']:
         rwh.mulSheetWrite(x,chORsn)
 
@@ -69,8 +64,6 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     #         # writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
     # return tempFile
-
-
 def isfloat(self, x):
     try:
         a = float(x)
@@ -78,8 +71,6 @@ def isfloat(self, x):
         return False
     else:
         return True
-
-
 def isint(self, x):
     try:
         a = float(x)
@@ -89,11 +80,7 @@ def isint(self, x):
     else:
         return a == b
 
-def updateShoesInvFile(self, data2):
-    print("yeah")
-
 def job(t):
-
 
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/dbPre.json')
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/exportinvtxt.txt')
@@ -110,11 +97,10 @@ def job(t):
     juniorStringOptions = ['JR', 'JUNIOR']
     adulteStringOptions = [' AD ','ADULTE','ADULTS','ADULT']
     trapOption =['LASTIC','HELLO']
-
-
-
     checkSizeList = []
     checkSizeDict = {'Items':checkSizeList}
+
+
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')):
         os.remove('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')
     #data = json.load(open('dbPre.json'))
@@ -263,19 +249,10 @@ def job(t):
                         except:
                             print(art)
 
-                        #print(ind,'- ', art['cdp'],'is', art['id'],'[ch#',art['qty_hb'],'][sn#',art['qty_sn'],']')
                         finalDict['Items'].append(art)
-                        # SORT
-                        #if art['sdep'] is "SOULIERS" or "SOULIER":
 
-                        #orgDict[art['dep']][art['sdep']][art['niv1']][art['niv2']].append(art)
-                        #checkSizeDict['Items'].append(art)
-
-                        #if ind == 1000:
-                         #   break
-                #if ind == 1000:
-                 #   break
-             json.dump(finalDict,src_file)
+            finalDict['ItemsSorted']=orgDict
+            json.dump(finalDict,src_file)
 
 
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')):
@@ -286,24 +263,16 @@ def job(t):
     with open('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json', 'r') as data_file:
         data2 = json.load(data_file)
 
-
-
-    #makeInvFile(data=data2,"CH") #charlesbourg
-    #makeInvFile(data=data2,"SN") #saint-nicolas
-
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
+    makeInvFile(data=data2,chORsn="CH") #charlesbourg
+    makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+
     print('Done: '+ str(datetime.now()))
-    # repo.git.commit("commit time: "+time.localtime(secs))
-    # origin = repo.remote(name='origin')
-    # origin.push()
 
 
 job(time.localtime(1))
-#with open('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json', 'r') as data_file:
- #   data2 = json.load(data_file)
-#makeInvFile(data=data2)
 
 schedule.every().day.at("09:05").do(job, 'It is 09:05')
 schedule.every().day.at("10:05").do(job, 'It is 10:05')

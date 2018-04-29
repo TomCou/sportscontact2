@@ -189,6 +189,7 @@ class RWHANDLE(object):
             #     if self.wr == -1:
             #         self.wr=self.countRows(0)
             #         debug('Writting row: '+str(self.wr))
+
     def mulSheetWrite(self,dict,chORsn):
         cdp= dict['cdp']
         size=dict['size']

@@ -90,7 +90,8 @@ class O:
                         'vbH_R':      'vbH',
                         'vbF_R':      'vbF'
                         }
-    scSoulierFile='inv_soulier'
+    scSoulierFileCH='inv_soulier_CH'
+    scSoulierFileSN = 'inv_soulier_SN'
     excelFolder = '//SCONTACTSRV/Public/invCustom/'
     DEBUG = True
     fromKevinExcelSheet=1
