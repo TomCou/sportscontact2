@@ -251,8 +251,8 @@ def job(t):
 
                         finalDict['Items'].append(art)
 
-            finalDict['ItemsSorted']=orgDict
-            json.dump(finalDict,src_file)
+        finalDict['ItemsSorted']=orgDict
+        json.dump(finalDict,src_file)
 
 
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')):
