@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="313" column="72" lean-forward="true" selection-start-line="313" selection-start-column="72" selection-end-line="313" selection-end-column="72" />
+            <state relative-caret-position="-69">
+              <caret line="306" column="61" selection-start-line="306" selection-start-column="61" selection-end-line="306" selection-end-column="61" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
                 <element signature="e#1147#1212#0" />
@@ -320,36 +320,6 @@
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
           <line>176</line>
           <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>321</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>322</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>325</line>
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>328</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>336</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>299</line>
-          <option name="timeStamp" value="152" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -733,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="313" column="72" lean-forward="true" selection-start-line="313" selection-start-column="72" selection-end-line="313" selection-end-column="72" />
+        <state relative-caret-position="-69">
+          <caret line="306" column="61" selection-start-line="306" selection-start-column="61" selection-end-line="306" selection-end-column="61" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#1147#1212#0" />
