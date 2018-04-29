@@ -87,15 +87,27 @@ def job(t):
     aList = []
     finalDict = {'Items':aList}
     orgDict = {}
-    femmeOptions=['N1000538','N1000642','N1000512']
-    hommeOptions=['N1000513']
-    juniorOptions=['N1000631','N1000540','N1000544','N1000632','N1000644']
-    juniorGirlOptions=['N1000553']
+
+    femmeOptions=['N1000538','N1000642','N1000512','N1000629','N1000505','N1000500','02','1']
+    hommeOptions=['N1000513','N1000630','N1000645','N1000501','01','N1000517','N1000518']
+    juniorOptions=['N1000631','N1000540','N1000502','N1000544','N1000632','N1000644','N1000646']
+    juniorGirlOptions=['N1000553','N1000507','03','2']
     adulteOptions=['N1000552','N1000539','N1000643','N1000506']
-    femmeStringOptions = ['FEMME', 'WMN', 'WMN\'S', 'WMNS']
+
+    indoorOptions = ['N2000696','N2000699']
+    outdoorOptions = ['N2000698', 'N2000695', 'N2000692']
+    turfOptions = ['N2000700','N2000697']
+
+    femmeStringOptions = ['FEMME', 'WMN', 'WMN\'S', 'WMNS','WOMENS']
     hommeStringOptions = ['HOMME', 'MEN']
-    juniorStringOptions = ['JR', 'JUNIOR']
+    juniorStringOptions = [' JR ', 'JUNIOR','YOUTH',' JR']
+    juniorGirlStringOptions = [' GS JR ','GIRL','FILLE']
     adulteStringOptions = [' AD ','ADULTE','ADULTS','ADULT']
+
+    outdoorStringOptions = [' FG ',' FXG ',' FG/AG ',' EXT ','OUTDOOR', ' MG ']
+    indoorStringOptions = [' IN ',' IND ',' IC ', ' CT ', ' ID ','INDOOR']
+    turfStringOptions = [' TF ',' TF',' CG ',' TT ',' TURF ']
+
     trapOption =['LASTIC','HELLO']
     checkSizeList = []
     checkSizeDict = {'Items':checkSizeList}
@@ -125,9 +137,16 @@ def job(t):
                         art['dep'] = art['dep'].replace(' ', '')  # cleanAtt(art['cdp'])
                         art['sdep'] = art['sdep'].replace(' ', '')  # cleanAtt(art['cdp'])
 
+                        ## id VS. ID
+                        art['id'] = art['ID']
+                        del art['ID']
+
+                        ## SOULIER VS. SOULIERS
+                        if art['sdep']=='SOULIER':
+                            art['sdep']='SOULIERS'
+
                         ## CHANGE EQUIVALENT WORDS AND CODES AND STUFF
                         # NIVEAU 1
-
                         for x in hommeOptions:
                             if art['niv1'] == x:
                                 art['niv1'] = 'HOMME'
@@ -136,13 +155,13 @@ def job(t):
                             if art['niv1'] == x:
                                 art['niv1'] = 'FEMME'
                                 break
+                        for x in juniorGirlOptions:
+                            if art['niv1'] == x:
+                                art['niv1'] = 'GIRL'
+                                break
                         for x in juniorOptions:
                             if art['niv1'] == x:
                                 art['niv1'] = 'JUNIOR'
-                                break
-                        for x in juniorGirlOptions:
-                            if art['niv1'] == x:
-                                art['niv1'] = 'WJUNIOR'
                                 break
                         for x in adulteOptions:
                             if art['niv1'] == x:
@@ -150,36 +169,62 @@ def job(t):
                                 break
 
                         # NIVEAU 2
-                        if art['niv2'] is 'N2000698':
-                            art['niv2'] = 'OUTDOOR'
-                        elif art['niv2'] is 'N2000700':
-                            art['niv2'] = 'TURF'
-                        elif art['niv2'] is 'N2000696':
-                            art['niv2'] = 'INDOOR'
-                        # id
-                        art['id']=art['ID']
-                        del art['ID']
+                        for x in outdoorOptions:
+                            if art['niv2'] == x:
+                                art['niv2'] = 'OUTDOOR'
+                                break
+                        for x in indoorOptions:
+                            if art['niv2'] == x:
+                                art['niv2'] = 'INDOOR'
+                                break
+                        for x in turfOptions:
+                            if art['niv2'] == x:
+                                art['niv2'] = 'TURF'
+                                break
+
 
                         # TRY TO FIND NIVEAU 1 AND 2 IN CAR IF NIV1 AND NIV2 ARE ''
                         if art['niv1'] is '':
                             for x in femmeStringOptions:
-                                if (str(art['car']).find(x)) >-1:
+                                if (str(art['car']).find(x)) > -1:
                                     art['niv1'] = 'FEMME'
                                     break
                         if art['niv1'] is '':
                             for x in hommeStringOptions:
-                                if (str(art['car']).find(x)) >-1:
+                                if (str(art['car']).find(x)) > -1:
                                     art['niv1'] = 'HOMME'
                                     break
                         if art['niv1'] is '':
+                            for x in juniorGirlStringOptions:
+                                if (str(art['car']).find(x)) > -1:
+                                    art['niv1'] = 'GIRL'
+                                    break
+                        if art['niv1'] is '':
                             for x in juniorStringOptions:
-                                if (str(art['car']).find(x)) >-1:
+                                if (str(art['car']).find(x)) > -1:
                                     art['niv1'] = 'JUNIOR'
                                     break
                         if art['niv1'] is '':
                             for x in adulteStringOptions:
-                                if (str(art['car']).find(x)) >-1:
+                                if (str(art['car']).find(x)) > -1:
                                     art['niv1'] = 'HOMME'
+                                    break
+
+                        # NIVEAU 2
+                        if art['niv2'] is '':
+                            for x in outdoorStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv2'] = 'OUTDOOR'
+                                    break
+                        if art['niv2'] is '':
+                            for x in indoorStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv2'] = 'INDOOR'
+                                    break
+                        if art['niv2'] is '':
+                            for x in turfStringOptions:
+                                if (str(art['car']).find(x)) >-1:
+                                    art['niv2'] = 'TURF'
                                     break
 
 
@@ -251,6 +296,29 @@ def job(t):
 
                         finalDict['Items'].append(art)
 
+        # # BASEBALL X 4 - 4 NIV1
+        # baseAD=[]
+        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['MISC'])
+        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['MISC'])
+        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['INDOOR'])
+        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['N2000784'])
+        # baseJR=[]
+        # baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['MISC'])
+        # baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
+        # baseGR=[]
+        # baseGR.extend(orgDict['BASEBALL']['SOULIERS']['GIRL']['MISC'])
+        # baseWM=[]
+        # baseWM.extend(orgDict['BASEBALL']['SOULIERS']['FEMME']['MISC'])
+        # # SOCCER X 9 - 3 NIV1 W/ 3 NIV2
+        # socADIN=[]
+        # socADIN.extend(orgDict['SOCCER']['SOULIERS']['HOMME']['INDOOR'])
+        # socADOU=[]
+        # socADTF=[]
+        # socJRIN = []
+        # socJROU = []
+        # socJRTF = []
+        # socWMOU = []
+
         finalDict['ItemsSorted']=orgDict
         json.dump(finalDict,src_file)
 
@@ -266,8 +334,8 @@ def job(t):
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    makeInvFile(data=data2,chORsn="CH") #charlesbourg
-    makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+    #makeInvFile(data=data2,chORsn="CH") #charlesbourg
+    #makeInvFile(data=data2,chORsn="SN") #saint-nicolas
 
     print('Done: '+ str(datetime.now()))
 
