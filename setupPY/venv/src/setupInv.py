@@ -275,7 +275,7 @@ def job(t):
                          #   break
                 #if ind == 1000:
                  #   break
-            json.dump(finalDict,src_file)
+             json.dump(finalDict,src_file)
 
 
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')):
