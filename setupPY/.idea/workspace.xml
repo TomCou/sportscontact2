@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="306" column="61" selection-start-line="306" selection-start-column="61" selection-end-line="306" selection-end-column="61" />
+            <state relative-caret-position="407">
+              <caret line="456" column="41" selection-start-line="456" selection-start-column="41" selection-end-line="456" selection-end-column="41" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
                 <element signature="e#1147#1212#0" />
@@ -128,10 +128,28 @@
     <findStrings>
       <find>SR</find>
       <find>W</find>
+      <find>foot</find>
+      <find>BASEBALL</find>
+      <find>bball</find>
+      <find>BASKETBALL</find>
+      <find>COURSEAPIED</find>
     </findStrings>
     <replaceStrings>
       <replace>AD</replace>
       <replace>R</replace>
+      <replace>foot</replace>
+      <replace>FOOTBALL</replace>
+      <replace>bball</replace>
+      <replace>BASCKETBALL</replace>
+      <replace>BASKETBALL</replace>
+      <replace>rugby</replace>
+      <replace>RUGBY</replace>
+      <replace>course</replace>
+      <replace>COURTETVOLLEYBALL</replace>
+      <replace>volley</replace>
+      <replace>ENTRAINEMENT</replace>
+      <replace>COURSEAPIED</replace>
+      <replace>SANDALES</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -280,7 +298,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.42701524" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39106753" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,6 +339,16 @@
           <line>176</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
+          <line>457</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
+          <line>393</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -329,11 +357,13 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="153" />
+      <option name="time" value="157" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="product" />
+        <watch expression="orgDict['ULTIMATEFRISBEE']" />
+        <watch expression="aList" />
       </configuration>
     </watches-manager>
   </component>
@@ -703,8 +733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="306" column="61" selection-start-line="306" selection-start-column="61" selection-end-line="306" selection-end-column="61" />
+        <state relative-caret-position="407">
+          <caret line="456" column="41" selection-start-line="456" selection-start-column="41" selection-end-line="456" selection-end-column="41" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#1147#1212#0" />

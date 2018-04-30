@@ -296,30 +296,167 @@ def job(t):
 
                         finalDict['Items'].append(art)
 
-        # # BASEBALL X 4 - 4 NIV1
-        # baseAD=[]
-        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['MISC'])
-        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['MISC'])
-        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['INDOOR'])
-        # baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['N2000784'])
-        # baseJR=[]
-        # baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['MISC'])
-        # baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
-        # baseGR=[]
-        # baseGR.extend(orgDict['BASEBALL']['SOULIERS']['GIRL']['MISC'])
-        # baseWM=[]
-        # baseWM.extend(orgDict['BASEBALL']['SOULIERS']['FEMME']['MISC'])
-        # # SOCCER X 9 - 3 NIV1 W/ 3 NIV2
-        # socADIN=[]
-        # socADIN.extend(orgDict['SOCCER']['SOULIERS']['HOMME']['INDOOR'])
-        # socADOU=[]
-        # socADTF=[]
-        # socJRIN = []
-        # socJROU = []
-        # socJRTF = []
-        # socWMOU = []
+        #SANDAL
 
-        finalDict['ItemsSorted']=orgDict
+        # BASEBALL X 4 - 4 NIV1
+        baseAD=[]
+        baseAD.extend(orgDict['BASEBALL']['SOULIERS']['MISC'])
+        baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['MISC'])
+        baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['INDOOR'])
+        baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['N2000784'])
+        baseJR=[]
+        baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['MISC'])
+        baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
+        baseGR=[]
+        baseGR.extend(orgDict['BASEBALL']['SOULIERS']['GIRL']['MISC'])
+        baseWM=[]
+        baseWM.extend(orgDict['BASEBALL']['SOULIERS']['FEMME']['MISC'])
+        baseWM.extend(orgDict['SOFTBALL']['SOULIERS']['FEMME']['MISC'])
+        # SOCCER X 7 - 3 NIV1 W/ 3 NIV2
+        socADIN=[]
+        socADIN.extend(orgDict['SOCCER']['SOULIERS']['HOMME']['INDOOR'])
+        socADOU=[]
+        socADOU.extend(orgDict['SOCCER']['SOULIERS']['HOMME']['OUTDOOR'])
+        socADTF=[]
+        socADTF.extend(orgDict['SOCCER']['SOULIERS']['HOMME']['TURF'])
+        socJRIN = []
+        socJRIN.extend(orgDict['SOCCER']['SOULIERS']['JUNIOR']['INDOOR'])
+        socJROU = []
+        socJROU.extend(orgDict['SOCCER']['SOULIERS']['JUNIOR']['OUTDOOR'])
+        socJRTF = []
+        socJRTF.extend(orgDict['SOCCER']['SOULIERS']['JUNIOR']['TURF'])
+        socWMOU = []
+        socWMOU.extend(orgDict['SOCCER']['SOULIERS']['FEMME']['OUTDOOR'])
+
+        # FOOTBALL x 2
+        footAD = []
+        footAD.extend(orgDict['FOOTBALL']['SOULIERS']['MISC'])
+        footAD.extend(orgDict['FOOTBALL']['SOULIERS']['HOMME']['MISC'])
+        footAD.extend(orgDict['FOOTBALL']['SOULIERS']['HOMME']['N2000784'])
+        footAD.extend(orgDict['FOOTBALL']['SOULIERS']['HOMME']['N2000782'])
+        footAD.extend(orgDict['FOOTBALL']['SOULIERS']['HOMME']['N2000783'])
+        footJR = []
+        footJR.extend(orgDict['FOOTBALL']['SOULIERS']['JUNIOR']['MISC'])
+        footJR.extend(orgDict['FOOTBALL']['SOULIERS']['JUNIOR']['N2000786'])
+        footJR.extend(orgDict['FOOTBALL']['SOULIERS']['JUNIOR']['N2000787'])
+        footJR.extend(orgDict['FOOTBALL']['SOULIERS']['JUNIOR']['N2000784'])
+        # ENTRAINMENT x 3
+        entrAD=[]
+        entrWM = []
+        entrGR = []
+        entrAD.extend(orgDict['ENTRAINEMENT']['SOULIERS']['MISC'])
+        entrAD.extend(orgDict['ENTRAINEMENT']['SOULIERS']['HOMME']['MISC'])
+        entrGR.extend(orgDict['ENTRAINEMENT']['SOULIERS']['GIRL']['MISC'])
+        entrWM.extend(orgDict['ENTRAINEMENT']['SOULIERS']['FEMME']['MISC'])
+        # BASKETBALL x 4
+        bballAD = []
+        bballAD.extend(orgDict['BASKETBALL']['SOULIERS']['MISC'])
+        bballAD.extend(orgDict['BASKETBALL']['SOULIERS']['HOMME']['MISC'])
+        bballJR = []
+        bballJR.extend(orgDict['BASKETBALL']['SOULIERS']['JUNIOR']['MISC'])
+        bballGR = []
+        bballGR.extend(orgDict['BASKETBALL']['SOULIERS']['GIRL']['MISC'])
+        bballWM = []
+        bballWM.extend(orgDict['BASKETBALL']['SOULIERS']['FEMME']['MISC'])
+        # RUGBY x 2
+        rugbyAD = []
+        rugbyAD.extend(orgDict['RUGBY']['SOULIERS']['MISC'])
+        rugbyAD.extend(orgDict['RUGBY']['SOULIERS']['HOMME']['MISC'])
+        rugbyAD.extend(orgDict['RUGBY']['SOULIERS']['HOMME']['N2000831'])
+        rugbyAD.extend(orgDict['RUGBY']['SOULIERS']['HOMME']['N2000830'])
+        rugbyAD.extend(orgDict['RUGBY']['SOULIERS']['HOMME']['N2000832'])
+        rugbyJR = []
+        rugbyJR.extend(orgDict['RUGBY']['SOULIERS']['JUNIOR']['MISC'])
+        # COURSE A PIED x 4
+        courseAD = []
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['MISC'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['MISC'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['N2000507'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['N2000509'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['N2000505'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['N2000506'])
+        courseAD.extend(orgDict['COURSEAPIED']['SOULIERS']['HOMME']['N2000508'])
+        courseJR = []
+        courseJR.extend(orgDict['COURSEAPIED']['SOULIERS']['JUNIOR']['MISC'])
+        courseGR = []
+        courseGR.extend(orgDict['COURSEAPIED']['SOULIERS']['GIRL']['MISC'])
+        courseGR.extend(orgDict['COURSEAPIED']['SOULIERS']['GIRL']['N2000511'])
+        courseWM = []
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['MISC'])
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000501'])
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000504'])
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000506'])
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000503'])
+        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000502'])
+        # COURTETVOLLEYBALL x 2
+        volleyAD = []
+        #volleyAD.extend(orgDict['COURTETVOLLEYBALL']['SOULIERS']['MISC'])
+        #volleyAD.extend(orgDict['VOLLEYBALL']['SOULIERS']['MISC'])
+        volleyAD.extend(orgDict['COURTETVOLLEYBALL']['SOULIERS']['HOMME']['MISC'])
+        volleyAD.extend(orgDict['VOLLEYBALL']['SOULIERS']['HOMME']['MISC'])
+        volleyAD.extend(orgDict['TENNIS']['SOULIERS']['HOMME']['MISC'])
+        volleyWM = []
+        volleyWM.extend(orgDict['COURTETVOLLEYBALL']['SOULIERS']['FEMME']['MISC'])
+        volleyWM.extend(orgDict['VOLLEYBALL']['SOULIERS']['FEMME']['MISC'])
+        # CHEER x 2
+        cheerWM = []
+        cheerWM.extend(orgDict['CHEERLEADING']['SOULIERS']['MISC'])
+        cheerWM.extend(orgDict['CHEERLEADING']['SOULIERS']['FEMME']['MISC'])
+        cheerGR = []
+        cheerGR.extend(orgDict['CHEERLEADING']['SOULIERS']['GIRL']['MISC'])
+        # SANDALES x 4
+        sandAD = []
+        sandAD.extend(orgDict['SANDALES']['SANDALES']['MISC'])
+        sandAD.extend(orgDict['SANDALES']['SANDALES']['HOMME']['MISC'])
+        sandJR = []
+        sandJR.extend(orgDict['SANDALES']['SANDALES']['JUNIOR']['MISC'])
+        sandWM = []
+        sandWM.extend(orgDict['SANDALES']['SANDALES']['FEMME']['MISC'])
+
+
+        finalDict['BASEBALLHOMME']=baseAD
+        finalDict['BASEBALLFEMME']=baseWM
+        finalDict['BASEBALLJUNIOR']=baseJR
+        finalDict['BASEBALLFILLE']=baseGR
+
+        finalDict['SOCCERHOMMEINDOOR']=socADIN
+        finalDict['SOCCERHOMMEOUTDOOR']=socADOU
+        finalDict['SOCCERHOMMETURF']=socADTF
+        finalDict['SOCCERJUNIORINDOOR'] = socJRIN
+        finalDict['SOCCERJUNIOROUTDOOR'] = socJROU
+        finalDict['SOCCERJUNIORTURF'] = socJRTF
+        finalDict['SOCCERFEMMEOUTDOOR'] = socWMOU
+
+        finalDict['FOOTBALLHOMME']=footAD
+        finalDict['FOOTBALLJUNIOR']=footJR
+
+        finalDict['RUGBYHOMME'] = rugbyAD
+        finalDict['RUGBYJUNIOR'] = rugbyJR
+
+        finalDict['BASKETBALLHOMME'] = bballAD
+        finalDict['BASKETBALLFEMME'] = bballWM
+        finalDict['BASKETBALLJUNIOR'] = bballJR
+        finalDict['BASKETBALLFILLE'] = bballGR
+
+        finalDict['ENTRAINEMENTHOMME'] = entrAD
+        finalDict['ENTRAINEMENTFEMME'] = entrWM
+        finalDict['ENTRAINEMENTFILLE'] = entrGR
+
+        finalDict['COURSEAPIEDHOMME'] = courseAD
+        finalDict['COURSEAPIEDFEMME'] = courseWM
+        finalDict['COURSEAPIEDJUNIOR'] = courseJR
+        finalDict['COURSEAPIEDFILLE'] = courseGR
+
+        finalDict['SANDALESHOMME'] = sandAD
+        finalDict['SANDALESFEMME'] = sandWM
+        finalDict['SANDALESJUNIOR'] = sandJR
+
+        finalDict['VOLLEYBALLHOMME'] = volleyAD
+        finalDict['VOLLEYBALLFEMME'] = volleyWM
+
+        finalDict['CHEERFILLE'] = cheerGR
+        finalDict['CHEERFEMME'] = cheerWM
+
         json.dump(finalDict,src_file)
 
 
