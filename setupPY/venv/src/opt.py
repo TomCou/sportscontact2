@@ -117,7 +117,7 @@ class O:
 
     }
 
-    scSoulierFileCH='inv_soulier_CH'
+    scSoulierFileCH='inv_soulier_HB'
     scSoulierFileSN = 'inv_soulier_SN'
     excelFolder = '//SCONTACTSRV/Public/invCustom/'
     DEBUG = True

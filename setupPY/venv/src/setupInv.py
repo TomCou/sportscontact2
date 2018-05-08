@@ -37,7 +37,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     # FILE CONTROL
     if (chORsn is "SN"):
         oldFile = o.scSoulierFileSN
-    elif (chORsn is "CH"):
+    elif (chORsn is "HB"):
         oldFile = o.scSoulierFileCH
     tempFile = o.excelFolder
     tempFile = tempFile + oldFile
@@ -473,7 +473,7 @@ def job(t):
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    makeInvFile(data=data2,chORsn="CH") #charlesbourg
+    makeInvFile(data=data2,chORsn="HB") #charlesbourg
     makeInvFile(data=data2,chORsn="SN") #saint-nicolas
 
     print('Done: '+ str(datetime.now()))
