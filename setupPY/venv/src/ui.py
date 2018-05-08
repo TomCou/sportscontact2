@@ -209,7 +209,8 @@ class RWHANDLE(object):
                 self.rs = self.rss[nSheet]
                 w_nSheet=nSheet.split('_R')
                 wSheetName=w_nSheet[0]
-                if(str(self.getCell(0,0))==cat):
+                a=str(self.getCell(0,0))
+                if(a == cat):
                     try:
                         while(1):
                             ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
