@@ -3,7 +3,8 @@ class O:
     sizeStRow=2
     sizeStCol=5
     cdpCol=0
-    maxShoesSheetRow=200
+    unbrandedItemAddingRow=3
+    maxShoesSheetRow=300
     listOfDepartmentR=['socJR_tur_R',
                       'socJR_ind_R',
                       'socJR_out_R',
@@ -90,6 +91,7 @@ class O:
                         'vbH_R':      'vbH',
                         'vbF_R':      'vbF'
                         }
+
     scSoulierFileCH='inv_soulier_CH'
     scSoulierFileSN = 'inv_soulier_SN'
     excelFolder = '//SCONTACTSRV/Public/invCustom/'

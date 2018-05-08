@@ -45,7 +45,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
 
     for x in data['Items']:
         if x['sdep']=='SOULIERS':
-            if(!rwh.mulSheetWrite(x,chORsn),true):
+            rwh.mulSheetWrite(x,chORsn,True)
 
 
 
@@ -473,8 +473,8 @@ def job(t):
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    #makeInvFile(data=data2,chORsn="CH") #charlesbourg
-    #makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+    makeInvFile(data=data2,chORsn="CH") #charlesbourg
+    makeInvFile(data=data2,chORsn="SN") #saint-nicolas
 
     print('Done: '+ str(datetime.now()))
 

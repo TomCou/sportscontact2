@@ -193,6 +193,11 @@ class RWHANDLE(object):
     def mulSheetWrite(self,dict,chORsn,addIfNotFound):
         cdp= dict['cdp']
         size=dict['size']
+        if(dict['dep']=='SOCCER'):
+            cat=dict['dep']+'_'+dict['niv1']+'_'+dict['niv2']
+        else:
+            cat = dict['dep']+'_'+dict['niv1']
+
         if(chORsn is "SN"):
             totalQty = int(dict['qty_sn'])
         elif(chORsn is "CH"):
@@ -202,23 +207,23 @@ class RWHANDLE(object):
         try:
             for nSheet in self.rss:
                 self.rs = self.rss[nSheet]
-                try:
-                    ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
-                    if(ind_r > 0):
-                        ind_c = self.fetchCinR(size,0,o.sizeStCol)
-                        if(ind_c > 0):
-                            r_nSheet=nSheet.split('_R')
-                            sheetName=r_nSheet[0]
-                            self.ws = self.wss[sheetName]
-                            self.setSingle(ind_r,ind_c,int(totalQty))
-                            return True
-                            #break
-                except Exception as e:
-                    debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
-            if(addIfNotFound):
-                self.insertRow()
-
-
+                w_nSheet=nSheet.split('_R')
+                wSheetName=w_nSheet[0]
+                if(self.getCell(0,0)==cat):
+                    try:
+                        while(1):
+                            ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
+                            if(ind_r > 0):
+                                ind_c = self.fetchCinR(size,0,o.sizeStCol)
+                                if(ind_c > 0):
+                                    self.ws = self.wss[wSheetName]
+                                    self.setSingle(ind_r,ind_c,int(totalQty))
+                                    return True
+                                    #break
+                            elif(addIfNotFound):
+                                self.insertRow(unbrandedItemAddingRow,1,wSheetName,cdp)
+                    except Exception as e:
+                        debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
         except Exception as e:
             debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
 
@@ -303,16 +308,16 @@ class RWHANDLE(object):
         shutil.move(filestring, processed_path)
         # os.rename(processed_path + os.sep + filestring, processed_path + os.sep + filestring[:-4] + ' [' + processedtag + ']' + '.xls')
 
-    def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,):
+    def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,itemToAdd):
 
         indexStartRow=indexStartRow+1
-        prevSheet = self.ws
+        prevSheet = self.wss[currSheetTitle]
         lastcol = prevSheet.max_column
         lastrow = prevSheet.max_row
 
         prevSheet.title = currSheetTitle+'_tmp'
-        self.wb.create_sheet(index=0, title='mainTracker')
-        newSheet = self.wb.get_sheet_by_name('mainTracker')
+        self.wb.create_sheet(index=0, title=currSheetTitle)
+        newSheet = self.wb.get_sheet_by_name(currSheetTitle)
 
         for row_num in range(1, indexStartRow):
             for col_num in range(1, lastcol + 1):
@@ -324,7 +329,10 @@ class RWHANDLE(object):
         # lastcol = newSheet.max_column
         # lastrow = newSheet.max_row
         # print(lastrow, ",", lastcol)
-        self.ws=self.wb.get_sheet_by_name('mainTracker')
+        self.setSingle(indexStartRow-1,0,itemToAdd)
+        self.wss[currSheetTitle]=self.wb.get_sheet_by_name(currSheetTitle)
+        self.wb.remove_sheet(currSheetTitle+'_tmp')
+
     def deleteRows(self, indexStartRow, nRowsToRemove):
         indexStartRow = indexStartRow + 1
         prevSheet = self.ws
