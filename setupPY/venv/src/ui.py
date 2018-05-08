@@ -224,6 +224,12 @@ class RWHANDLE(object):
                                     #break
                             elif(addIfNotFound):
                                 self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,cdp)
+                                #tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
+                                self.wb.remove(nSheet)
+                                tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
+                                tmpSh.title = nSheet
+                                self.rss[nSheet]=tmpSh
+
                     except Exception as e:
                         debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
         except Exception as e:
