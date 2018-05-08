@@ -222,7 +222,7 @@ class RWHANDLE(object):
                                     return True
                                     #break
                             elif(addIfNotFound):
-                                self.insertRow(unbrandedItemAddingRow,1,wSheetName,cdp)
+                                self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,cdp)
                     except Exception as e:
                         debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
         except Exception as e:
