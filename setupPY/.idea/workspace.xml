@@ -11,40 +11,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="313">
+              <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
+                <element signature="e#1008#1073#0" />
+                <element signature="e#1848#1947#0" />
+                <element signature="e#1972#2092#0" />
+                <element signature="e#2111#23342#0" />
+                <element signature="e#3936#22536#0" />
+                <element signature="e#23194#23244#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shutil.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/shutil.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="192" column="4" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
+            <state relative-caret-position="474">
+              <caret line="218" column="32" lean-forward="true" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
               <folding>
                 <element signature="e#1002#1092#0" />
                 <element signature="e#1178#1303#0" />
                 <element signature="e#1364#4062#0" />
-                <element signature="e#4211#8331#0" />
-                <element signature="e#4930#8331#0" />
-                <element signature="e#5252#7620#0" />
                 <element signature="e#7743#7791#0" />
+                <element signature="e#9421#12350#0" />
               </folding>
             </state>
           </provider>
@@ -53,17 +48,14 @@
       <file leaf-file-name="opt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCLIB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/src/SCLIB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="85">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding>
+                <element signature="e#108#794#0" />
+                <element signature="e#818#1526#0" />
+                <element signature="e#1551#2498#0" />
+                <element signature="e#2523#3510#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,9 +102,9 @@
       <list>
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/git/__init__.py" />
         <option value="$PROJECT_DIR$/venv/src/SCLIB.py" />
-        <option value="$PROJECT_DIR$/venv/src/ui.py" />
         <option value="$PROJECT_DIR$/venv/src/opt.py" />
         <option value="$PROJECT_DIR$/venv/src/setupInv.py" />
+        <option value="$PROJECT_DIR$/venv/src/ui.py" />
       </list>
     </option>
   </component>
@@ -242,7 +234,7 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08392857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08392857" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
@@ -251,7 +243,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39106753" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39106753" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -269,22 +261,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>50</line>
+          <line>52</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>209</line>
+          <line>210</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>210</line>
+          <line>211</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>493</line>
+          <line>496</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -294,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>393</line>
+          <line>395</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
       </breakpoints>
@@ -351,6 +343,12 @@
           <caret line="457" selection-start-line="457" selection-end-line="457" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1008#1073#0" />
+            <element signature="e#1848#1947#0" />
+            <element signature="e#1972#2092#0" />
+            <element signature="e#2111#23342#0" />
+            <element signature="e#3936#22536#0" />
+            <element signature="e#23194#23244#0" />
           </folding>
         </state>
       </provider>
@@ -363,10 +361,8 @@
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
             <element signature="e#1364#4062#0" />
-            <element signature="e#4211#8331#0" />
-            <element signature="e#4930#8331#0" />
-            <element signature="e#5252#7620#0" />
             <element signature="e#7743#7791#0" />
+            <element signature="e#9421#12350#0" />
           </folding>
         </state>
       </provider>
@@ -375,6 +371,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+          <folding>
+            <element signature="e#108#794#0" />
+            <element signature="e#818#1526#0" />
+            <element signature="e#1551#2498#0" />
+            <element signature="e#2523#3510#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -391,6 +393,12 @@
           <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1008#1073#0" />
+            <element signature="e#1848#1947#0" />
+            <element signature="e#1972#2092#0" />
+            <element signature="e#2111#23342#0" />
+            <element signature="e#3936#22536#0" />
+            <element signature="e#23194#23244#0" />
           </folding>
         </state>
       </provider>
@@ -408,6 +416,12 @@
           <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1008#1073#0" />
+            <element signature="e#1848#1947#0" />
+            <element signature="e#1972#2092#0" />
+            <element signature="e#2111#23342#0" />
+            <element signature="e#3936#22536#0" />
+            <element signature="e#23194#23244#0" />
           </folding>
         </state>
       </provider>
@@ -425,6 +439,12 @@
           <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1008#1073#0" />
+            <element signature="e#1848#1947#0" />
+            <element signature="e#1972#2092#0" />
+            <element signature="e#2111#23342#0" />
+            <element signature="e#3936#22536#0" />
+            <element signature="e#23194#23244#0" />
           </folding>
         </state>
       </provider>
@@ -611,36 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/SCLIB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="192" column="4" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
-          <folding>
-            <element signature="e#1002#1092#0" />
-            <element signature="e#1178#1303#0" />
-            <element signature="e#1364#4062#0" />
-            <element signature="e#4211#8331#0" />
-            <element signature="e#4930#8331#0" />
-            <element signature="e#5252#7620#0" />
-            <element signature="e#7743#7791#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -655,12 +645,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/SCLIB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#108#794#0" />
+            <element signature="e#818#1526#0" />
+            <element signature="e#1551#2498#0" />
+            <element signature="e#2523#3510#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="313">
+          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1008#1073#0" />
+            <element signature="e#1848#1947#0" />
+            <element signature="e#1972#2092#0" />
+            <element signature="e#2111#23342#0" />
+            <element signature="e#3936#22536#0" />
+            <element signature="e#23194#23244#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="218" column="32" lean-forward="true" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
+          <folding>
+            <element signature="e#1002#1092#0" />
+            <element signature="e#1178#1303#0" />
+            <element signature="e#1364#4062#0" />
+            <element signature="e#7743#7791#0" />
+            <element signature="e#9421#12350#0" />
           </folding>
         </state>
       </provider>

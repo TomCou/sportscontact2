@@ -190,7 +190,7 @@ class RWHANDLE(object):
             #         self.wr=self.countRows(0)
             #         debug('Writting row: '+str(self.wr))
 
-    def mulSheetWrite(self,dict,chORsn):
+    def mulSheetWrite(self,dict,chORsn,addIfNotFound):
         cdp= dict['cdp']
         size=dict['size']
         if(chORsn is "SN"):
@@ -207,12 +207,18 @@ class RWHANDLE(object):
                     if(ind_r > 0):
                         ind_c = self.fetchCinR(size,0,o.sizeStCol)
                         if(ind_c > 0):
-                            sheetName=nSheet+'_W'
+                            r_nSheet=nSheet.split('_R')
+                            sheetName=r_nSheet[0]
                             self.ws = self.wss[sheetName]
                             self.setSingle(ind_r,ind_c,int(totalQty))
-                            break
+                            return True
+                            #break
                 except Exception as e:
                     debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+            if(addIfNotFound):
+                self.insertRow()
+
+
         except Exception as e:
             debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
 
@@ -296,18 +302,15 @@ class RWHANDLE(object):
         processedtag = 'Processed on ' + today + ' '
         shutil.move(filestring, processed_path)
         # os.rename(processed_path + os.sep + filestring, processed_path + os.sep + filestring[:-4] + ' [' + processedtag + ']' + '.xls')
-    def insertRow(self,indexStartRow, nRowsToAdd):
-        # indexStartRow = 5#int(sys.argv[1])
-        # nRowsToAdd = 10#int(sys.argv[2])
-        #str_wb = '.\\_archives\\dummyDummy.xlsx'#str(sys.argv[3])
-        #
-        #wb = openpyxl.load_workbook(str_wb)
+
+    def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,):
+
         indexStartRow=indexStartRow+1
         prevSheet = self.ws
         lastcol = prevSheet.max_column
         lastrow = prevSheet.max_row
 
-        prevSheet.title = 'mainTrackerPrev'
+        prevSheet.title = currSheetTitle+'_tmp'
         self.wb.create_sheet(index=0, title='mainTracker')
         newSheet = self.wb.get_sheet_by_name('mainTracker')
 

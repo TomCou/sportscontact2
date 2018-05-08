@@ -3,7 +3,7 @@ class O:
     sizeStRow=2
     sizeStCol=5
     cdpCol=0
-    maxShoesSheetRow=100
+    maxShoesSheetRow=200
     listOfDepartmentR=['socJR_tur_R',
                       'socJR_ind_R',
                       'socJR_out_R',
