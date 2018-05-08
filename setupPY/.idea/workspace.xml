@@ -14,7 +14,7 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="301">
               <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="210" column="38" lean-forward="true" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
+            <state relative-caret-position="301">
+              <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
               <folding>
                 <element signature="e#1002#1092#0" />
                 <element signature="e#1178#1303#0" />
@@ -50,19 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cell.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/cell/cell.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="145" selection-start-line="145" selection-end-line="145" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="opt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
+            <state relative-caret-position="1615">
               <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
             </state>
           </provider>
@@ -268,29 +259,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>505</line>
+          <line>506</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
           <line>176</line>
           <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>196</line>
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
@@ -317,6 +293,16 @@
           <line>475</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
+          <line>335</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -325,13 +311,14 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="168" />
+      <option name="time" value="172" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="product" />
         <watch expression="orgDict['ULTIMATEFRISBEE']" />
         <watch expression="aList" />
+        <watch expression="self.wss" />
       </configuration>
     </watches-manager>
   </component>
@@ -668,16 +655,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/cell/cell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
+        <state relative-caret-position="1615">
           <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="301">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
@@ -688,17 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/cell/cell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="210" column="38" lean-forward="true" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
+        <state relative-caret-position="301">
+          <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
