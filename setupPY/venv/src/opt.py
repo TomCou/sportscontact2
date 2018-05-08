@@ -17,14 +17,20 @@ class O:
                     'cheer_R',
                       'bbJR_R',
                       'bbAD_R',
-                      'rugby_R',
+                      'rugbyAD_R',
+                       'rugbyJR_R',
                       'footJR_R',
                       'footAD_R',
                       'courseH_R',
                       'courseF_R',
                       'courseJR_R',
                       'vbH_R',
-                      'vbF_R'
+                      'vbF_R',
+                        'entreH_R',
+                        'entreF_R',
+                        'entreJR_R',
+                        'cheerF_R',
+                        'cheerJR_R'
                        ]
     listOfDepartment = ['socJR_tur',
                          'socJR_ind',
@@ -38,14 +44,20 @@ class O:
                         'cheer',
                          'bbJR',
                          'bbAD',
-                         'rugby',
-                         'footJR',
+                         'rugbyAD',
+                        'rugbyJR',
+                        'footJR',
                          'footAD',
                          'courseH',
                          'courseF',
                          'courseJR',
                          'vbH',
-                         'vbF'
+                         'vbF',
+                        'entreH',
+                        'entreF',
+                        'entreJR',
+                        'cheerF',
+                        'cheerJR'
                          ]
     dictNameOfDepNtoR = {
                         'socJR_tur': 'socJR_tur_R',
@@ -60,14 +72,20 @@ class O:
                         'cheer':'cheer_R',
                         'bbJR':'bbJR_R',
                         'bbAD':'bbAD_R',
-                        'rugby':'rugby_R',
+                        'rugbyAD':    'rugbyAD_R',
+                        'rugbyJR':    'rugbyJR_R',
                         'footJR':'footJR_R',
                         'footAD':'footAD_R',
                         'courseH':'courseH_R',
                         'courseF':'courseF_R',
                         'courseJR':'courseJR_R',
                         'vbH':'vbH_R',
-                        'vbF':'vbF_R'
+                        'vbF':'vbF_R',
+                        'entreH':   'entreH_R',
+                        'entreF': 'entreF_R',
+                        'entreJR': 'entreJR_R',
+                        'cheerF': 'cheerF_R',
+                        'cheerJR': 'cheerJR_R'
                         }
     dictNameOfDepRtoN = {
                         'socJR_tur_R': 'socJR_tur',
@@ -82,15 +100,22 @@ class O:
                         'cheer_R':'cheer',
                         'bbJR_R':     'bbJR',
                         'bbAD_R':     'bbAD',
-                        'rugby_R':    'rugby',
+                        'rugbyAD_R':    'rugbyAD',
+                        'rugbyJR_R':    'rugbyJR',
                         'footJR_R':   'footJR',
                         'footAD_R':   'footAD',
                         'courseH_R':  'courseH',
                         'courseF_R':  'courseF',
                         'courseJR_R': 'courseJR',
                         'vbH_R':      'vbH',
-                        'vbF_R':      'vbF'
-                        }
+                        'vbF_R':      'vbF',
+                        'entreH_R':   'entreH',
+                        'entreF_R': 'entreF',
+                        'entreJR_R': 'entreJR',
+                        'cheerF_R': 'cheerF',
+                        'cheerJR_R': 'cheerJR'
+
+    }
 
     scSoulierFileCH='inv_soulier_CH'
     scSoulierFileSN = 'inv_soulier_SN'
