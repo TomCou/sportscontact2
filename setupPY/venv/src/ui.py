@@ -120,6 +120,7 @@ class RWHANDLE(object):
         self.fpmList = []
         self.po = po
         self.idr = idr
+        self.mul = mul
 
         if(mul):
             puma="PUMA-DIADORA"

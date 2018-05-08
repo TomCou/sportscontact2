@@ -46,6 +46,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     for x in data['Items']:
         if x['sdep']=='SOULIERS':
             rwh.mulSheetWrite(x,chORsn,True)
+    rwh.saveFile()
 
 
 
