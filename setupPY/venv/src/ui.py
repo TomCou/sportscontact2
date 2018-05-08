@@ -334,7 +334,7 @@ class RWHANDLE(object):
         self.ws=self.wb.get_sheet_by_name(currSheetTitle)
         self.setSingle(indexStartRow-1,0,itemToAdd)
         self.wss[currSheetTitle]=self.wb.get_sheet_by_name(currSheetTitle)
-        self.wb.remove(currSheetTitle+'_tmp')
+        self.wb.remove(tstSheet)
 
     def deleteRows(self, indexStartRow, nRowsToRemove):
         indexStartRow = indexStartRow + 1
