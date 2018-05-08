@@ -200,7 +200,7 @@ class RWHANDLE(object):
 
         if(chORsn is "SN"):
             totalQty = int(dict['qty_sn'])
-        elif(chORsn is "CH"):
+        elif(chORsn is "HB"):
             totalQty = int(dict['qty_hb'])
 
         #totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
