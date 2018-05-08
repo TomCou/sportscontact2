@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="457" selection-start-line="457" selection-end-line="457" />
+            <state relative-caret-position="153">
+              <caret line="448" lean-forward="true" selection-start-line="448" selection-end-line="448" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
               </folding>
@@ -107,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="113" />
     <option name="y" value="39" />
     <option name="width" value="1443" />
@@ -648,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="457" selection-start-line="457" selection-end-line="457" />
+        <state relative-caret-position="153">
+          <caret line="448" lean-forward="true" selection-start-line="448" selection-end-line="448" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
           </folding>
