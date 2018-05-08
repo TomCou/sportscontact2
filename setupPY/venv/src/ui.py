@@ -225,7 +225,7 @@ class RWHANDLE(object):
                             elif(addIfNotFound):
                                 self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,cdp)
                                 #tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
-                                self.wb.remove(nSheet)
+                                self.wb.remove(self.wb.get_sheet_by_name(nSheet))
                                 tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
                                 tmpSh.title = nSheet
                                 self.rss[nSheet]=tmpSh
