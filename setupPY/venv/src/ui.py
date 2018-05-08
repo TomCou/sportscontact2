@@ -319,6 +319,7 @@ class RWHANDLE(object):
         prevSheet.title = currSheetTitle+'_tmp'
         self.wb.create_sheet(index=0, title=currSheetTitle)
         newSheet = self.wb.get_sheet_by_name(currSheetTitle)
+        tstSheet = self.wb.get_sheet_by_name(currSheetTitle+'_tmp')
 
         for row_num in range(1, indexStartRow):
             for col_num in range(1, lastcol + 1):

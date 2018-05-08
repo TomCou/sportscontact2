@@ -29,8 +29,8 @@
       <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
+            <state relative-caret-position="267">
+              <caret line="321" column="66" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
               <folding>
                 <element signature="e#1002#1092#0" />
                 <element signature="e#1178#1303#0" />
@@ -260,18 +260,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>506</line>
+          <line>507</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
           <line>176</line>
           <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>212</line>
-          <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
@@ -295,13 +290,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>211</line>
-          <option name="timeStamp" value="168" />
+          <line>336</line>
+          <option name="timeStamp" value="171" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>335</line>
-          <option name="timeStamp" value="171" />
+          <line>333</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
+          <line>313</line>
+          <option name="timeStamp" value="173" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -311,7 +311,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="172" />
+      <option name="time" value="174" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -684,8 +684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="335" column="22" lean-forward="true" selection-start-line="335" selection-start-column="22" selection-end-line="335" selection-end-column="22" />
+        <state relative-caret-position="267">
+          <caret line="321" column="66" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
