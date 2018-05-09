@@ -140,7 +140,7 @@ class RWHANDLE(object):
                 for nameR in self.listDepR:
 #                    self.rss[name] = self.wb[dictDepNvW[name]]
                     #abc=self.dictDepRvN[nameR]
-                    tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR]) #self.wb[name]
+                    tmprs = self.wb[self.dictDepRvN[nameR]]#.get_sheet_by_name(self.dictDepRvN[nameR]) #self.wb[name]
                     tmprs.title = nameR
                     self.rss[nameR] =  tmprs #self.wb[name]
 
