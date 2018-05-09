@@ -44,8 +44,9 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     rwh = ui.RWHANDLE(tempFile,mul=True)
 
     for x in data['Items']:
-        if x['sdep']=='SOULIERS':
-            rwh.mulSheetWrite(x,chORsn,True)
+        if (int(x['qty_SN']) +int(x['qty_HB'])) >0:
+            if x['sdep']=='SOULIERS':
+                rwh.mulSheetWrite(x,chORsn,True)
     rwh.saveFile()
 
 

@@ -574,7 +574,7 @@ class RWHANDLE(object):
     def setRes(self,rman,rowValue):
         for col in range(0, self.rs.max_column):
             self.setSingle(rowValue,col,rman.getAtt(self.getSingle(rowKey=0,colKey=col)))
-    def fetchRinC(self,target,colOfKey,index):## recursive index starts at 0
+    def fetchRinC(self,target,colOfKey,index,safety=False):## recursive index starts at 0
         try:
             if index>o.maxShoesSheetRow: #=self.countRows(colOfKey,index):
                 return -1
@@ -584,8 +584,12 @@ class RWHANDLE(object):
                 return index
         except:
             return -1
-    def fetchCinR(self,target,index,rowOfKey):## recursive index starts at 0
+    def fetchCinR(self,target,index,rowOfKey,safety=False):## recursive index starts at 0
         try:
+            if safety == True:
+                if index>o.maxShoesSheetRow:
+                    return -1
+
             if index>self.rs.max_column:
                 return -1
             elif str(target) != str(self.getSingle(rowOfKey,index)):
