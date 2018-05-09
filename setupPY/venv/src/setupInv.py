@@ -44,7 +44,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     rwh = ui.RWHANDLE(tempFile,mul=True)
 
     for x in data['Items']:
-        if (int(x['qty_SN']) +int(x['qty_HB'])) >0:
+        if (int(x['qty_sn']) +int(x['qty_hb'])) >0:
             if x['sdep']=='SOULIERS':
                 rwh.mulSheetWrite(x,chORsn,True)
     rwh.saveFile()
@@ -478,8 +478,8 @@ def job(t):
     try:
         makeInvFile(data=data2,chORsn="HB") #charlesbourg
         makeInvFile(data=data2,chORsn="SN") #saint-nicolas
-    except:
-        pass
+    except Exception as e:
+        print(e," in Job")
 
     print('Done: '+ str(datetime.now()))
 
