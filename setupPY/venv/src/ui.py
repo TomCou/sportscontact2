@@ -229,6 +229,7 @@ class RWHANDLE(object):
                                 tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
                                 tmpSh.title = nSheet
                                 self.rss[nSheet]=tmpSh
+                                self.rs = self.rss[nSheet]
 
                     except Exception as e:
                         debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
