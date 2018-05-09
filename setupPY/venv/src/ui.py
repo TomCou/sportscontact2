@@ -164,7 +164,6 @@ class RWHANDLE(object):
                     tmpws.title = name
                     self.wss[name] = tmpws #self.wb.copy_worksheet(self.rss[dictDepWvN[nameW]])
 
-
                 # self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
                 # self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
                 # self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
