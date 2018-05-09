@@ -576,10 +576,14 @@ class RWHANDLE(object):
             self.setSingle(rowValue,col,rman.getAtt(self.getSingle(rowKey=0,colKey=col)))
     def fetchRinC(self,target,colOfKey,index,safety=False):## recursive index starts at 0
         try:
+            if safety == True:
+                if index>o.maxShoesSheetRow:
+                    return -1
+
             if index>o.maxShoesSheetRow: #=self.countRows(colOfKey,index):
                 return -1
             elif str(target) != str(self.getSingle(index,colOfKey)):
-                return self.fetchRinC(target,colOfKey,index+1)
+                return self.fetchRinC(target,colOfKey,index+1,True)
             else:
                 return index
         except:
@@ -593,7 +597,7 @@ class RWHANDLE(object):
             if index>self.rs.max_column:
                 return -1
             elif str(target) != str(self.getSingle(rowOfKey,index)):
-                return self.fetchCinR(target,index+1,rowOfKey)
+                return self.fetchCinR(target,index+1,rowOfKey,True)
             else:
                 return index
         except:
@@ -797,6 +801,7 @@ class RWHANDLE(object):
             return str(self.rs[cr].value)
         except Exception as e:
             debug(str(e)+', Location ui.getSingle()')
+            return none
     def getDictoRow(self,rowIndex,rowValue):
         lastCol = self.rs.max_column
         data={}
