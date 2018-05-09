@@ -475,8 +475,11 @@ def job(t):
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    makeInvFile(data=data2,chORsn="HB") #charlesbourg
-    makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+    try:
+        makeInvFile(data=data2,chORsn="HB") #charlesbourg
+        makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+    except:
+        pass
 
     print('Done: '+ str(datetime.now()))
 
