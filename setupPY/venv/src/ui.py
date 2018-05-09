@@ -216,7 +216,7 @@ class RWHANDLE(object):
                         while(1):
                             ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
                             if(ind_r > 0):
-                                ind_c = self.fetchCinR(size,0,o.sizeStCol)
+                                ind_c = self.fetchCinR(size,o.sizeStCol,o.sizeStRow)
                                 if(ind_c > 0):
                                     self.ws = self.wss[wSheetName]
                                     self.setSingle(ind_r,ind_c,int(totalQty))
