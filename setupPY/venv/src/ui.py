@@ -339,9 +339,9 @@ class RWHANDLE(object):
         # lastcol = newSheet.max_column
         # lastrow = newSheet.max_row
         # print(lastrow, ",", lastcol)
-        self.ws=self.wb.get_sheet_by_name(currSheetTitle)
+        self.ws=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
         self.setSingle(indexStartRow-1,0,itemToAdd)
-        self.wss[currSheetTitle]=self.wb.get_sheet_by_name(currSheetTitle)
+        self.wss[currSheetTitle]=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
         self.wb.remove(tstSheet)
 
     def deleteRows(self, indexStartRow, nRowsToRemove):
