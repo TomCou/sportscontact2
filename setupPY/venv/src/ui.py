@@ -222,7 +222,7 @@ class RWHANDLE(object):
                                     return True
                                     #break
                             elif(addIfNotFound):
-                                self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,cdp)
+                                self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,dict)
                                 #tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
                                 self.wb.remove(self.wb[nSheet])#.get_sheet_by_name(nSheet))
                                 tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
@@ -339,7 +339,9 @@ class RWHANDLE(object):
         # lastrow = newSheet.max_row
         # print(lastrow, ",", lastcol)
         self.ws=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-        self.setSingle(indexStartRow-1,0,itemToAdd)
+        self.setSingle(indexStartRow-1,0,itemToAdd['cdp'])
+        self.setSingle(indexStartRow - 1, 2, itemToAdd['price'])
+        self.setSingle(indexStartRow - 1, 3, itemToAdd['car'])
         self.wss[currSheetTitle]=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
         self.wb.remove(tstSheet)
 
