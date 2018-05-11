@@ -480,11 +480,11 @@ def job(t):
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    # try:
-    #     #makeInvFile(data=data2,chORsn="HB") #charlesbourg
-    #     #makeInvFile(data=data2,chORsn="SN") #saint-nicolas
-    # except Exception as e:
-    #     print(e," in Job")
+    try:
+        makeInvFile(data=data2,chORsn="HB") #charlesbourg
+        makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+    except Exception as e:
+        print(e," in Job")
 
     print('Done: '+ str(datetime.now()))
 
