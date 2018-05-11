@@ -31,8 +31,8 @@
       <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="516" selection-start-line="516" selection-end-line="516" />
+            <state relative-caret-position="293">
+              <caret line="517" column="16" lean-forward="true" selection-start-line="517" selection-start-column="16" selection-end-line="517" selection-end-column="16" />
               <folding>
                 <element signature="e#1002#1092#0" />
                 <element signature="e#1178#1303#0" />
@@ -223,6 +223,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14345238" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -249,11 +250,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>516</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
           <line>804</line>
@@ -713,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="516" selection-start-line="516" selection-end-line="516" />
+        <state relative-caret-position="293">
+          <caret line="517" column="16" lean-forward="true" selection-start-line="517" selection-start-column="16" selection-end-line="517" selection-end-column="16" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
