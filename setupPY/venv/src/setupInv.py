@@ -43,11 +43,16 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     tempFile = tempFile + oldFile
     rwh = ui.RWHANDLE(tempFile,mul=True)
 
+    indMaxIter = 0
+
     for x in data['Items']:
+        indMaxIter=indMaxIter+1
         if (int(x['qty_sn']) +int(x['qty_hb'])) >0:
             if x['sdep']=='SOULIERS':
                 if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
                     rwh.mulSheetWrite(x,chORsn,True)
+                if indMaxIter == 1000:
+                    break
             else:
                 pass
         else:
