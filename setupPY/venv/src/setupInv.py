@@ -48,16 +48,29 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
 
     for x in data['Items']:
         indIter=indIter+1
-        if (int(x['qty_sn']) +int(x['qty_hb'])) >0:
-            if x['sdep']=='SOULIERS':
-                if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
-                    rwh.mulSheetWrite(x,chORsn,True)
-                if indIter == maxIter:
-                    break
+        if (chORsn is "SN"):
+            if int(x['qty_sn']) > 0:
+                if x['sdep']=='SOULIERS':
+                    if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
+                        rwh.mulSheetWrite(x,chORsn,True)
+                    if indIter == maxIter:
+                        break
+                else:
+                    pass
             else:
                 pass
-        else:
-            pass
+        elif (chORsn is "HB"):
+            if int(x['qty_hb']) > 0:
+                if x['sdep'] == 'SOULIERS':
+                    if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
+                        rwh.mulSheetWrite(x, chORsn, True)
+                    if indIter == maxIter:
+                        break
+                else:
+                    pass
+            else:
+                pass
+
     rwh.saveFile()
 
 
