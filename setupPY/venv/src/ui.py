@@ -514,11 +514,11 @@ class RWHANDLE(object):
         # except Exception as e:
         #     debug('No mainTrackerRead1'+ str(e))
         #     pass
-        
+
         self.wb.save(self.filePath+'.xlsx')
         for nameR in self.listDepR:
             try:
-                abc=self.wb.get_sheet_by_name(nameR)
+                abc=self.wb[nameR]
                 self.wb.remove(abc)
             except:
                 self.wb.remove(nameR)
