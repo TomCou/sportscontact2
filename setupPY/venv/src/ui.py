@@ -164,6 +164,9 @@ class RWHANDLE(object):
                     tmpws.title = name
                     self.wss[name] = tmpws #self.wb.copy_worksheet(self.rss[dictDepWvN[nameW]])
 
+                for name in self.listDep:
+                    self.rs = self.rss[self.dictDepNvR[name]]
+                    self.clearPrevData(self.wb[name])
                 # self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
                 # self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
                 # self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
@@ -315,6 +318,19 @@ class RWHANDLE(object):
         processedtag = 'Processed on ' + today + ' '
         shutil.move(filestring, processed_path)
         # os.rename(processed_path + os.sep + filestring, processed_path + os.sep + filestring[:-4] + ' [' + processedtag + ']' + '.xls')
+
+    def clearPrevData(self,sheetObject):
+        check = 0
+        self.ws = sheetObject
+        for row in self.ws.max_row:
+            if (row > 3) and (str(self.getSingle(row,0))!="CODE"):
+                if self.getSingle(row,0) == "" or null:
+                    check=check+1
+                    if check >3:
+                        break
+                else:
+                    for x in 44:
+                        self.setSingle(row,x+5,"")
 
     def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,itemToAdd):
 
