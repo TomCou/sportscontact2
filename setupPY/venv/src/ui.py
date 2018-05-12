@@ -329,8 +329,10 @@ class RWHANDLE(object):
                     if check >3:
                         break
                 else:
-                    for x in 44:
+                    x=0
+                    while(x!=44):
                         self.setSingle(row,x+5,"")
+                        x=x+1
 
     def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,itemToAdd):
 
