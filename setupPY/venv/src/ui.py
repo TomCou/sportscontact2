@@ -520,6 +520,14 @@ class RWHANDLE(object):
             try:
                 abc=self.wb[nameR]
                 self.wb.remove(abc)
+                try:
+                    abcd = self.wb[nameR+'1']
+                    self.wb.remove(abcd)
+                except:
+                    try:
+                        self.wb.remove(nameR+'1')
+                    except:
+                        pass
             except:
                 self.wb.remove(nameR)
         self.wb.save(self.filePath + '.xlsx')
