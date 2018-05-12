@@ -44,7 +44,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     rwh = ui.RWHANDLE(tempFile,mul=True)
 
     indIter = 0
-    maxIter = 10000
+    maxIter = 2000
 
     for x in data['Items']:
         indIter=indIter+1
