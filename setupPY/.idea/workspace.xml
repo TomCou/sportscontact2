@@ -14,8 +14,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+            <state relative-caret-position="394">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
                 <element signature="e#1271#1336#0" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="526" column="24" lean-forward="true" selection-start-line="526" selection-start-column="24" selection-end-line="526" selection-end-column="24" />
+            <state relative-caret-position="55">
+              <caret line="528" column="27" lean-forward="true" selection-start-line="528" selection-start-column="27" selection-end-line="528" selection-end-column="27" />
               <folding>
                 <element signature="e#1002#1092#0" />
                 <element signature="e#1178#1303#0" />
@@ -140,8 +140,8 @@
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/git/__init__.py" />
         <option value="$PROJECT_DIR$/venv/src/SCLIB.py" />
         <option value="$PROJECT_DIR$/venv/src/opt.py" />
-        <option value="$PROJECT_DIR$/venv/src/setupInv.py" />
         <option value="$PROJECT_DIR$/venv/src/ui.py" />
+        <option value="$PROJECT_DIR$/venv/src/setupInv.py" />
       </list>
     </option>
   </component>
@@ -309,7 +309,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="222" />
+      <option name="time" value="224" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -338,12 +338,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>if (str(art['car']).find(x))</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>if (str(art['car']).find(x)</expression-string>
+        <expression-string />
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -878,8 +878,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+        <state relative-caret-position="394">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#1271#1336#0" />
@@ -893,8 +893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="526" column="24" lean-forward="true" selection-start-line="526" selection-start-column="24" selection-end-line="526" selection-end-column="24" />
+        <state relative-caret-position="55">
+          <caret line="528" column="27" lean-forward="true" selection-start-line="528" selection-start-column="27" selection-end-line="528" selection-end-column="27" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
