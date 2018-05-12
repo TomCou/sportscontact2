@@ -326,7 +326,7 @@ class RWHANDLE(object):
         check = 0
         self.ws = sheetObject
         row =0
-        while(row!=self.ws.max_row()):
+        while(row != self.ws.max_row):
             if (row > 3) and (str(self.getSingle(row,0))!="CODE"):
                 if self.getSingle(row,0) == "" or null:
                     check=check+1
