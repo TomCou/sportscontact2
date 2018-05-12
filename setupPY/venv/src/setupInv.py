@@ -53,7 +53,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
                 if x['sdep']=='SOULIERS':
                     if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
                         rwh.mulSheetWrite(x,chORsn,True)
-                    if indIter == maxIter:
+                    if indIter >= maxIter:
                         break
                 else:
                     pass
@@ -64,7 +64,7 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
                 if x['sdep'] == 'SOULIERS':
                     if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
                         rwh.mulSheetWrite(x, chORsn, True)
-                    if indIter == maxIter:
+                    if indIter >= maxIter:
                         break
                 else:
                     pass
