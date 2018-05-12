@@ -504,6 +504,7 @@ class RWHANDLE(object):
                 #writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
         return newFile
+
     def saveFile(self):
         current = os.getcwd()
         # a = self.wb.get_sheet_by_name("mainTrackerRead")
@@ -513,6 +514,7 @@ class RWHANDLE(object):
         # except Exception as e:
         #     debug('No mainTrackerRead1'+ str(e))
         #     pass
+        
         self.wb.save(self.filePath+'.xlsx')
         for nameR in self.listDepR:
             try:
@@ -555,6 +557,7 @@ class RWHANDLE(object):
         #     debug(self.filePath + "_back has saved successfully.")
         # except Exception as e:
         #     debug("Saving didnt work: " + str(e)+', Location ui.RWHADLE.saveFile()')
+
     def setSingle(self, rowKey=0, colKey=0,value=0):
         cr = str(get_column_letter(colKey + 1)) + str(rowKey + 1)
         try:
