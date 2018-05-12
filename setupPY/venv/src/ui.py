@@ -165,8 +165,11 @@ class RWHANDLE(object):
                     self.wss[name] = tmpws #self.wb.copy_worksheet(self.rss[dictDepWvN[nameW]])
 
                 for name in self.listDep:
-                    self.rs = self.rss[self.dictDepNvR[name]]
-                    self.clearPrevData(self.wb[name])
+                    try:
+                        self.rs = self.rss[self.dictDepNvR[name]]
+                        self.clearPrevData(self.wb[name])
+                    except:
+                        debug("location -- ui, RWHANDLE, in clearPrevData Loop")
                 # self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
                 # self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
                 # self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
