@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="275">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
                 <element signature="e#1271#1336#0" />
@@ -28,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="55">
@@ -301,6 +301,11 @@
           <line>815</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/setupInv.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -309,7 +314,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="224" />
+      <option name="time" value="225" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -322,6 +327,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>nameR+'1'</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.getSingle(rowOfKey,index)</expression-string>
         <language-id>Python</language-id>
@@ -338,12 +348,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>if (str(art['car']).find(x))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>if (str(art['car']).find(x)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -876,21 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="e#20#29#0" expanded="true" />
-            <element signature="e#1271#1336#0" />
-            <element signature="e#2111#2210#0" />
-            <element signature="e#2235#2355#0" />
-            <element signature="e#2374#23674#0" />
-            <element signature="e#4199#22799#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -945,6 +940,21 @@
             <element signature="e#54080#57319#0" />
             <element signature="e#57348#58359#0" />
             <element signature="e#58380#71653#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#20#29#0" expanded="true" />
+            <element signature="e#1271#1336#0" />
+            <element signature="e#2111#2210#0" />
+            <element signature="e#2235#2355#0" />
+            <element signature="e#2374#23674#0" />
+            <element signature="e#4199#22799#0" />
           </folding>
         </state>
       </provider>
