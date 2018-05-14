@@ -485,6 +485,10 @@ def job(t):
         finalDict['CHEERFILLE'] = cheerGR
         finalDict['CHEERFEMME'] = cheerWM
 
+        finalDictForFiles = finalDict
+        del finalDictForFiles['Items']
+
+
         json.dump(finalDict,src_file)
 
 
@@ -500,8 +504,8 @@ def job(t):
     p.wait()
 
     try:
-        makeInvFile(data=finalDict,chORsn="HB") #charlesbourg
-        makeInvFile(data=finalDict,chORsn="SN") #saint-nicolas
+        makeInvFile(data=finalDictForFiles,chORsn="HB") #charlesbourg
+        makeInvFile(data=finalDictForFiles,chORsn="SN") #saint-nicolas
     except Exception as e:
         print(e," in Job")
 
