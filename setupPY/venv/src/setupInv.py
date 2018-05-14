@@ -500,8 +500,8 @@ def job(t):
     p.wait()
 
     try:
-        makeInvFile(data=data2,chORsn="HB") #charlesbourg
-        makeInvFile(data=data2,chORsn="SN") #saint-nicolas
+        makeInvFile(data=finalDict,chORsn="HB") #charlesbourg
+        makeInvFile(data=finalDict,chORsn="SN") #saint-nicolas
     except Exception as e:
         print(e," in Job")
 
