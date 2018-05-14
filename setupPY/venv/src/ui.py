@@ -195,51 +195,108 @@ class RWHANDLE(object):
             #     if self.wr == -1:
             #         self.wr=self.countRows(0)
             #         debug('Writting row: '+str(self.wr))
+    def singleSheetWrite(self,dict,nSheet,chORsn,addIfNotFound):
 
-    def mulSheetWrite(self,dict,chORsn,addIfNotFound):
-        cdp= dict['cdp']
-        size=dict['size']
-        if(dict['dep']=='SOCCER'):
-            cat=dict['dep']+'_'+dict['niv1']+'_'+dict['niv2']
-        else:
-            cat = dict['dep']+'_'+dict['niv1']
+        cdp = dict['cdp']
+        size = dict['size']
+        #if (dict['dep'] == 'SOCCER'):
+        #    cat = dict['dep'] + '_' + dict['niv1'] + '_' + dict['niv2']
+        #else:
+        #   cat = dict['dep'] + '_' + dict['niv1']
 
-        if(chORsn is "SN"):
+        if dict['size'] == '5K' or '5.5K' or '6K' or '6.5K':
+            return
+
+        if (chORsn is "SN"):
             totalQty = int(dict['qty_sn'])
-        elif(chORsn is "HB"):
+        elif (chORsn is "HB"):
             totalQty = int(dict['qty_hb'])
 
-        #totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
+        self.rs = self.rss[nSheet]
+        w_nSheet = nSheet.split('_R')
+        wSheetName = w_nSheet[0]
+        #a = str(self.getSingle(0, 0))
         try:
-            for nSheet in self.rss:
-                self.rs = self.rss[nSheet]
-                w_nSheet=nSheet.split('_R')
-                wSheetName=w_nSheet[0]
-                a=str(self.getSingle(0,0))
-                if(a == cat):
-                    try:
-                        while(1):
-                            ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
-                            if(ind_r > 0):
-                                ind_c = self.fetchCinR(size,o.sizeStCol,o.sizeStRow)
-                                if(ind_c > 0):
-                                    self.ws = self.wss[wSheetName]
-                                    self.setSingle(ind_r,ind_c,int(totalQty))
-                                    return True
-                                    #break
-                            elif(addIfNotFound):
-                                self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,dict)
-                                #tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
-                                self.wb.remove(self.wb[nSheet])#.get_sheet_by_name(nSheet))
-                                tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
-                                tmpSh.title = nSheet
-                                self.rss[nSheet]=tmpSh
-                                self.rs = self.rss[nSheet]
+            while (1):
+                ind_r = self.fetchRinC(cdp, o.cdpCol, o.sizeStRow)
+                if (ind_r > 0):
+                    ind_c = self.fetchCinR(size, o.sizeStCol, o.sizeStRow)
+                    if (ind_c > 0):
+                        self.ws = self.wss[wSheetName]
+                        self.setSingle(ind_r, ind_c, int(totalQty))
+                        return True
+                        # break
+                elif (addIfNotFound):
+                    self.insertRow(o.unbrandedItemAddingRow, 1, wSheetName, dict)
+                    # tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
+                    self.wb.remove(self.wb[nSheet])  # .get_sheet_by_name(nSheet))
+                    tmpSh = self.wb.copy_worksheet(self.wss[wSheetName])
+                    tmpSh.title = nSheet
+                    self.rss[nSheet] = tmpSh
+                    self.rs = self.rss[nSheet]
 
-                    except Exception as e:
-                        debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
         except Exception as e:
             debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+
+
+    def mulSheetWrite(self,dict,chORsn,addIfNotFound):
+        starterReadSheets = self.rss
+        try:
+            for nSheet in starterReadSheets:
+                self.rs = self.rss[nSheet]
+                a = str(self.getSingle(0, 0))
+                for cat in dict:
+                    if (a == cat):
+                        for items in cat:
+                            self.singleSheetWrite(items,nSheet,chORsn,addIfNotFound)
+                        break
+        except Exception as e:
+            debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+
+
+        # cdp= dict['cdp']
+        # size=dict['size']
+        # if(dict['dep']=='SOCCER'):
+        #     cat=dict['dep']+'_'+dict['niv1']+'_'+dict['niv2']
+        # else:
+        #     cat = dict['dep']+'_'+dict['niv1']
+        #
+        # if(chORsn is "SN"):
+        #     totalQty = int(dict['qty_sn'])
+        # elif(chORsn is "HB"):
+        #     totalQty = int(dict['qty_hb'])
+        #
+        # #totalQty=int(dict['qty_hb'])+int(dict['qty_sn'])
+        # try:
+        #     for nSheet in self.rss:
+        #         self.rs = self.rss[nSheet]
+        #         w_nSheet=nSheet.split('_R')
+        #         wSheetName=w_nSheet[0]
+        #         a=str(self.getSingle(0,0))
+        #         if(a == cat):
+        #             try:
+        #                 while(1):
+        #                     ind_r = self.fetchRinC(cdp,o.cdpCol,o.sizeStRow)
+        #                     if(ind_r > 0):
+        #                         ind_c = self.fetchCinR(size,o.sizeStCol,o.sizeStRow)
+        #                         if(ind_c > 0):
+        #                             self.ws = self.wss[wSheetName]
+        #                             self.setSingle(ind_r,ind_c,int(totalQty))
+        #                             return True
+        #                             #break
+        #                     elif(addIfNotFound):
+        #                         self.insertRow(o.unbrandedItemAddingRow,1,wSheetName,dict)
+        #                         #tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
+        #                         self.wb.remove(self.wb[nSheet])#.get_sheet_by_name(nSheet))
+        #                         tmpSh=self.wb.copy_worksheet(self.wss[wSheetName])
+        #                         tmpSh.title = nSheet
+        #                         self.rss[nSheet]=tmpSh
+        #                         self.rs = self.rss[nSheet]
+        #
+        #             except Exception as e:
+        #                 debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+        # except Exception as e:
+        #     debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
 
     def writeItems(self,filePath):
         ### Open source workbook ###

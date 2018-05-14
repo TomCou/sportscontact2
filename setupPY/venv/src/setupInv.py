@@ -42,34 +42,35 @@ def makeInvFile(data,chORsn):  # DictResAttribute):
     tempFile = o.excelFolder
     tempFile = tempFile + oldFile
     rwh = ui.RWHANDLE(tempFile,mul=True)
+    rwh.mulSheetWrite(data,chORsn,True)
+   # indIter = 0
+  #  maxIter = 2000
 
-    indIter = 0
-    maxIter = 2000
+#    for x in data:
+ #       indIter=indIter+1
 
-    for x in data['Items']:
-        indIter=indIter+1
-        if (chORsn is "SN"):
-            if int(x['qty_sn']) > 0:
-                if x['sdep']=='SOULIERS':
-                    if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
-                        rwh.mulSheetWrite(x,chORsn,True)
-                    if indIter >= maxIter:
-                        break
-                else:
-                    pass
-            else:
-                pass
-        elif (chORsn is "HB"):
-            if int(x['qty_hb']) > 0:
-                if x['sdep'] == 'SOULIERS':
-                    if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
-                        rwh.mulSheetWrite(x, chORsn, True)
-                    if indIter >= maxIter:
-                        break
-                else:
-                    pass
-            else:
-                pass
+        # if (chORsn is "SN"):
+        #     if int(x['qty_sn']) > 0:
+        #         if x['sdep']=='SOULIERS':
+        #             if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
+        #                 rwh.mulSheetWrite(x,chORsn,True)
+        #             if indIter >= maxIter:
+        #                 break
+        #         else:
+        #             pass
+        #     else:
+        #         pass
+        # elif (chORsn is "HB"):
+        #     if int(x['qty_hb']) > 0:
+        #         if x['sdep'] == 'SOULIERS':
+        #             if x['size'] != '5K' or '5.5K' or '6K' or '6.5K':
+        #                 rwh.mulSheetWrite(x, chORsn, True)
+        #             if indIter >= maxIter:
+        #                 break
+        #         else:
+        #             pass
+        #     else:
+        #         pass
 
     rwh.saveFile()
 
