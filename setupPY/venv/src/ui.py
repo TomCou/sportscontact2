@@ -164,12 +164,12 @@ class RWHANDLE(object):
                     tmpws.title = name
                     self.wss[name] = tmpws #self.wb.copy_worksheet(self.rss[dictDepWvN[nameW]])
 
-                for name in self.listDep:
-                    self.rs = self.rss[self.dictDepNvR[name]]
-                    try:
-                        self.clearPrevData(self.wb[name])
-                    except Exception as e:
-                        debug(str(e) + ", Location -- ui, RWHANDLE in clearPrevData Loop")
+                # for name in self.listDep:
+                #     self.rs = self.rss[self.dictDepNvR[name]]
+                #     try:
+                #         self.clearPrevData(self.wb[name])
+                #     except Exception as e:
+                #         debug(str(e) + ", Location -- ui, RWHANDLE in clearPrevData Loop")
                 # self.wss[nikeW] = self.wb.copy_worksheet(self.rss[nike])  # get_sheet(0)                          # the sheet to write to within the writable copy
                 # self.wss[pumaW] = self.wb.copy_worksheet(self.rss[puma])
                 # self.wss[adidasW] = self.wb.copy_worksheet(self.rss[adidas])  # get_sheet(0)                          # the sheet to write to within the writable copy
@@ -240,10 +240,11 @@ class RWHANDLE(object):
 
 
     def mulSheetWrite(self,dict,chORsn,addIfNotFound):
-        starterReadSheets = self.rss
+        starterReadSheets = self.wss
         try:
             for nSheet in starterReadSheets:
-                self.rs = self.rss[nSheet]
+                self.rs = self.rss[self.dictDepNvR[nSheet]]
+                self.clearPrevData(self.wss[nSheet])
                 a = str(self.getSingle(0, 0))
                 for cat in dict:
                     if (a == cat):
