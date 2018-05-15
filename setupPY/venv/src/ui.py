@@ -212,8 +212,8 @@ class RWHANDLE(object):
         elif (chORsn is "HB"):
             totalQty = int(dict['qty_hb'])
 
-        self.rs = self.rss[nSheet]
-        w_nSheet = nSheet.split('_R')
+        self.rs = self.rss[nSheet+'_R']
+        w_nSheet = nSheet
         wSheetName = w_nSheet[0]
         #a = str(self.getSingle(0, 0))
         try:
