@@ -199,22 +199,15 @@ class RWHANDLE(object):
 
         cdp = dict['cdp']
         size = dict['size']
-        #if (dict['dep'] == 'SOCCER'):
-        #    cat = dict['dep'] + '_' + dict['niv1'] + '_' + dict['niv2']
-        #else:
-        #   cat = dict['dep'] + '_' + dict['niv1']
-
         if str(dict['size']) == ('5K' or '5.5K' or '6K' or '6.5K'):
             return
-
         if (chORsn is "SN"):
             totalQty = int(dict['qty_sn'])
         elif (chORsn is "HB"):
             totalQty = int(dict['qty_hb'])
 
         self.rs = self.rss[self.dictDepNvR[nSheet]]
-        w_nSheet = nSheet
-        wSheetName = w_nSheet[0]
+        wSheetName = nSheet
         #a = str(self.getSingle(0, 0))
         try:
             while (1):
