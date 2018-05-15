@@ -248,7 +248,7 @@ class RWHANDLE(object):
                 a = str(self.getSingle(0, 0))
                 for cat in dict:
                     if (a == cat):
-                        for items in cat:
+                        for items in dict[cat]:
                             self.singleSheetWrite(items,nSheet,chORsn,addIfNotFound)
                         break
         except Exception as e:
