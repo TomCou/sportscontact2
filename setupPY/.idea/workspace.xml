@@ -16,8 +16,8 @@
           <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="412">
-                  <caret line="508" selection-start-line="508" selection-end-line="508" />
+                <state relative-caret-position="327">
+                  <caret line="515" column="22" lean-forward="true" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
                   <folding>
                     <element signature="e#20#29#0" expanded="true" />
                     <element signature="e#2768#2867#0" />
@@ -43,8 +43,8 @@
           <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="174">
-                  <caret line="213" selection-start-line="213" selection-end-line="213" />
+                <state relative-caret-position="344">
+                  <caret line="229" column="41" selection-start-line="229" selection-start-column="41" selection-end-line="229" selection-end-column="41" />
                   <folding>
                     <element signature="e#1002#1092#0" />
                     <element signature="e#1178#1303#0" />
@@ -292,11 +292,6 @@
           <line>508</line>
           <option name="timeStamp" value="307" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>213</line>
-          <option name="timeStamp" value="317" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -305,7 +300,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="318" />
+      <option name="time" value="322" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -781,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="508" selection-start-line="508" selection-end-line="508" />
+        <state relative-caret-position="327">
+          <caret line="515" column="22" lean-forward="true" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#2768#2867#0" />
@@ -793,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="344">
+          <caret line="229" column="41" selection-start-line="229" selection-start-column="41" selection-end-line="229" selection-end-column="41" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
