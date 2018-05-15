@@ -219,7 +219,7 @@ class RWHANDLE(object):
                         self.setSingle(ind_r, ind_c, int(totalQty))
                         return True
                     else:
-                        debug("WARNING","Item: "+str(dict["cdp"])+" has no size")
+                        debug("WARNING"+" -- Item: "+str(dict["cdp"])+" has no size")
                         return True
                         # break
                 elif (addIfNotFound):
