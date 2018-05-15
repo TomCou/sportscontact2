@@ -222,11 +222,11 @@ class RWHANDLE(object):
                 elif (addIfNotFound):
                     self.insertRow(o.unbrandedItemAddingRow, 1, wSheetName, dict)
                     # tmprs = self.wb.get_sheet_by_name(self.dictDepRvN[nameR])  # self.wb[name]
-                    self.wb.remove(self.wb[nSheet])  # .get_sheet_by_name(nSheet))
+                    self.wb.remove(self.wb[self.dictDepNvR[nSheet]])  # .get_sheet_by_name(nSheet))
                     tmpSh = self.wb.copy_worksheet(self.wss[wSheetName])
-                    tmpSh.title = nSheet
-                    self.rss[nSheet] = tmpSh
-                    self.rs = self.rss[nSheet]
+                    tmpSh.title = self.dictDepNvR[nSheet]
+                    self.rss[self.dictDepNvR[nSheet]] = tmpSh
+                    self.rs = self.rss[self.dictDepNvR[nSheet]]
 
         except Exception as e:
             debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
@@ -392,33 +392,36 @@ class RWHANDLE(object):
                         x=x+1
 
     def insertRow(self,indexStartRow, nRowsToAdd,currSheetTitle,itemToAdd):
+        try:
+            indexStartRow=indexStartRow+1
+            prevSheet = self.wss[currSheetTitle]
+            lastcol = prevSheet.max_column
+            lastrow = prevSheet.max_row
 
-        indexStartRow=indexStartRow+1
-        prevSheet = self.wss[currSheetTitle]
-        lastcol = prevSheet.max_column
-        lastrow = prevSheet.max_row
+            prevSheet.title = currSheetTitle+'_tmp'
+            self.wb.create_sheet(index=0, title=currSheetTitle)
+            newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+            prevSheet = self.wb[currSheetTitle+'_tmp']#.get_sheet_by_name(currSheetTitle+'_tmp')
 
-        prevSheet.title = currSheetTitle+'_tmp'
-        self.wb.create_sheet(index=0, title=currSheetTitle)
-        newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-        tstSheet = self.wb[currSheetTitle+'_tmp']#.get_sheet_by_name(currSheetTitle+'_tmp')
+            for row_num in range(1, indexStartRow):
+                for col_num in range(1, lastcol + 1):
+                    newSheet.cell(row=row_num, column=col_num).value = prevSheet.cell(row=row_num, column=col_num).value
+            for row_num in range(indexStartRow, lastrow + 1):
+                offsetIndex = row_num + nRowsToAdd
+                for col_num in range(1, lastcol + 1):
+                    newSheet.cell(row=offsetIndex, column=col_num).value = prevSheet.cell(row=row_num,column=col_num).value
+            # lastcol = newSheet.max_column
+            # lastrow = newSheet.max_row
+            # print(lastrow, ",", lastcol)
+            self.ws=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+            self.setSingle(indexStartRow-1,0,itemToAdd['cdp'])
+            self.setSingle(indexStartRow - 1, 2, itemToAdd['price'])
+            self.setSingle(indexStartRow - 1, 3, itemToAdd['car'])
+            self.wss[currSheetTitle]=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+            self.wb.remove(prevSheet)
+        except Exception as e:
+            debug(str(e) + ", Location -- RWHANDLE, insertRow()")
 
-        for row_num in range(1, indexStartRow):
-            for col_num in range(1, lastcol + 1):
-                newSheet.cell(row=row_num, column=col_num).value = prevSheet.cell(row=row_num, column=col_num).value
-        for row_num in range(indexStartRow, lastrow + 1):
-            offsetIndex = row_num + nRowsToAdd
-            for col_num in range(1, lastcol + 1):
-                newSheet.cell(row=offsetIndex, column=col_num).value = prevSheet.cell(row=row_num,column=col_num).value
-        # lastcol = newSheet.max_column
-        # lastrow = newSheet.max_row
-        # print(lastrow, ",", lastcol)
-        self.ws=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-        self.setSingle(indexStartRow-1,0,itemToAdd['cdp'])
-        self.setSingle(indexStartRow - 1, 2, itemToAdd['price'])
-        self.setSingle(indexStartRow - 1, 3, itemToAdd['car'])
-        self.wss[currSheetTitle]=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-        self.wb.remove(tstSheet)
 
     def deleteRows(self, indexStartRow, nRowsToRemove):
         indexStartRow = indexStartRow + 1
