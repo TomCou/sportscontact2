@@ -204,7 +204,7 @@ class RWHANDLE(object):
         #else:
         #   cat = dict['dep'] + '_' + dict['niv1']
 
-        if str(dict['size']) == '5K' or '5.5K' or '6K' or '6.5K':
+        if str(dict['size']) == ('5K' or '5.5K' or '6K' or '6.5K'):
             return
 
         if (chORsn is "SN"):

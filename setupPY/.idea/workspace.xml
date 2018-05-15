@@ -43,8 +43,8 @@
           <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="310">
-                  <caret line="250" column="46" selection-start-line="250" selection-start-column="46" selection-end-line="250" selection-end-column="46" />
+                <state relative-caret-position="293">
+                  <caret line="206" column="62" lean-forward="true" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="64" />
                   <folding>
                     <element signature="e#1002#1092#0" />
                     <element signature="e#1178#1303#0" />
@@ -228,7 +228,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -285,6 +284,11 @@
           <line>250</line>
           <option name="timeStamp" value="301" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
+          <line>206</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -293,7 +297,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="302" />
+      <option name="time" value="303" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -306,6 +310,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>str(dict['size']) == '5K' or '5.5K' or '6K' or '6.5K'</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.ws.max_row</expression-string>
         <language-id>Python</language-id>
@@ -771,8 +780,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="250" column="46" selection-start-line="250" selection-start-column="46" selection-end-line="250" selection-end-column="46" />
+        <state relative-caret-position="293">
+          <caret line="206" column="62" lean-forward="true" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="64" />
           <folding>
             <element signature="e#1002#1092#0" />
             <element signature="e#1178#1303#0" />
