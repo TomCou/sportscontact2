@@ -218,6 +218,9 @@ class RWHANDLE(object):
                         self.ws = self.wss[wSheetName]
                         self.setSingle(ind_r, ind_c, int(totalQty))
                         return True
+                    else:
+                        debug("WARNING","Item: "+str(dict["cdp"])+" has no size")
+                        return True
                         # break
                 elif (addIfNotFound):
                     self.insertRow(o.unbrandedItemAddingRow, 1, wSheetName, dict)
