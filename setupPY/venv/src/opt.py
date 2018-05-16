@@ -163,8 +163,15 @@ class O:
                     "18":52,
                     "":-1}
 
-    locationOfSizes = []
-
+    columnStyle = {"A":
+                       {"Font":
+                            {"name":,"size":}
+                        },
+                    "B":{},
+                   "C":{},
+                   "D":{},
+                   "EtoAZ":}
+    cellStyle={"Title":{"font"}}
 
     scSoulierFileCH='inv_soulier_HB'
     scSoulierFileSN = 'inv_soulier_SN'

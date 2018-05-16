@@ -234,8 +234,6 @@ class RWHANDLE(object):
 
         except Exception as e:
             debug(str(e) + ", Location -> RWHANDLE, singleSheetWrite")
-
-
     def mulSheetWrite(self,dict,chORsn,addIfNotFound):
         starterReadSheets = self.wss
         try:
@@ -295,6 +293,23 @@ class RWHANDLE(object):
         #                 debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
         # except Exception as e:
         #     debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+
+    #def getCellStyle(self):
+    #def setCellStyle(self):
+
+    for col in worksheet.columns:
+        max_length = 0
+        column = col[0].column  # Get the column name
+        for cell in col:
+            if cell.coordinate in worksheet.merged_cells:  # not check merge_cells
+                continue
+            try:  # Necessary to avoid error on empty cells
+                if len(str(cell.value)) > max_length:
+                    max_length = len(cell.value)
+            except:
+                pass
+        adjusted_width = (max_length + 2) * 1.2
+        worksheet.column_dimensions[column].width = adjusted_width
 
     def writeItems(self,filePath):
         ### Open source workbook ###
