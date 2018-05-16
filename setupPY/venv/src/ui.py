@@ -233,7 +233,7 @@ class RWHANDLE(object):
                     self.rs = self.rss[self.dictDepNvR[nSheet]]
 
         except Exception as e:
-            debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+            debug(str(e) + ", Location -> RWHANDLE, singleSheetWrite")
 
 
     def mulSheetWrite(self,dict,chORsn,addIfNotFound):
@@ -249,7 +249,7 @@ class RWHANDLE(object):
                             self.singleSheetWrite(items,nSheet,chORsn,addIfNotFound)
                         break
         except Exception as e:
-            debug(str(e) + ", Location -- RWHANDLE, mulSheetWrite")
+            debug(str(e) + ", Location -> RWHANDLE, mulSheetWrite")
 
 
         # cdp= dict['cdp']
