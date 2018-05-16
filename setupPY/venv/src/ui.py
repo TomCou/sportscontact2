@@ -297,19 +297,19 @@ class RWHANDLE(object):
     #def getCellStyle(self):
     #def setCellStyle(self):
 
-    for col in worksheet.columns:
-        max_length = 0
-        column = col[0].column  # Get the column name
-        for cell in col:
-            if cell.coordinate in worksheet.merged_cells:  # not check merge_cells
-                continue
-            try:  # Necessary to avoid error on empty cells
-                if len(str(cell.value)) > max_length:
-                    max_length = len(cell.value)
-            except:
-                pass
-        adjusted_width = (max_length + 2) * 1.2
-        worksheet.column_dimensions[column].width = adjusted_width
+    # for col in worksheet.columns:
+    #     max_length = 0
+    #     column = col[0].column  # Get the column name
+    #     for cell in col:
+    #         if cell.coordinate in worksheet.merged_cells:  # not check merge_cells
+    #             continue
+    #         try:  # Necessary to avoid error on empty cells
+    #             if len(str(cell.value)) > max_length:
+    #                 max_length = len(cell.value)
+    #         except:
+    #             pass
+    #     adjusted_width = (max_length + 2) * 1.2
+    #     worksheet.column_dimensions[column].width = adjusted_width
 
     def writeItems(self,filePath):
         ### Open source workbook ###
@@ -416,27 +416,27 @@ class RWHANDLE(object):
             prevSheet = self.wss[currSheetTitle]
             lastcol = prevSheet.max_column
             lastrow = prevSheet.max_row
-
-            prevSheet.title = currSheetTitle+'_tmp'
-            self.wb.create_sheet(index=0, title=currSheetTitle)
-            newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-            prevSheet = self.wb[currSheetTitle+'_tmp']#.get_sheet_by_name(currSheetTitle+'_tmp')
+            prevSheet.title = currSheetTitle+'_old'
+            #self.wb.create_sheet(index=0, title=currSheetTitle)
+            #newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+            newSheet=self.wb.copy_worksheet("TEMPLATE")
+            newSheet.title(currSheetTitle)
+            prevSheet = self.wb[currSheetTitle+'_old']#that verifies that it is in the wb
 
             for row_num in range(1, indexStartRow):
                 for col_num in range(1, lastcol + 1):
                     newSheet.cell(row=row_num, column=col_num).value = prevSheet.cell(row=row_num, column=col_num).value
+
             for row_num in range(indexStartRow, lastrow + 1):
                 offsetIndex = row_num + nRowsToAdd
                 for col_num in range(1, lastcol + 1):
                     newSheet.cell(row=offsetIndex, column=col_num).value = prevSheet.cell(row=row_num,column=col_num).value
-            # lastcol = newSheet.max_column
-            # lastrow = newSheet.max_row
-            # print(lastrow, ",", lastcol)
-            self.ws=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+
+            self.ws=self.wb[currSheetTitle]
             self.setSingle(indexStartRow-1,0,itemToAdd['cdp'])
-            self.setSingle(indexStartRow - 1, 2, itemToAdd['price'])
-            self.setSingle(indexStartRow - 1, 3, itemToAdd['car'])
-            self.wss[currSheetTitle]=self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
+            self.setSingle(indexStartRow-1, 2, itemToAdd['price'])
+            self.setSingle(indexStartRow-1, 3, itemToAdd['car'])
+            self.wss[currSheetTitle]=self.wb[currSheetTitle]
             self.wb.remove(prevSheet)
         except Exception as e:
             debug(str(e) + ", Location -- RWHANDLE, insertRow()")
