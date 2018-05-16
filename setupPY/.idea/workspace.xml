@@ -13,7 +13,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.3201389">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="17">
@@ -27,11 +27,17 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="opt.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="opt.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1615">
-                  <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+                <state relative-caret-position="204">
+                  <caret line="115" column="4" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#137#1012#0" />
+                    <element signature="e#1036#1919#0" />
+                    <element signature="e#1944#3143#0" />
+                    <element signature="e#3168#4384#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -43,13 +49,22 @@
           <file leaf-file-name="ui.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="249" column="30" lean-forward="true" selection-start-line="249" selection-start-column="30" selection-end-line="249" selection-end-column="30" />
+                <state relative-caret-position="323">
+                  <caret line="221" column="21" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="21" />
                   <folding>
                     <element signature="e#1002#1092#0" />
                     <element signature="e#1178#1303#0" />
                     <element signature="e#1364#4062#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="worksheet.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/worksheet/worksheet.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="490">
+                  <caret line="428" selection-start-line="428" selection-end-line="428" />
                 </state>
               </provider>
             </entry>
@@ -98,13 +113,13 @@
       <list>
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/git/__init__.py" />
         <option value="$PROJECT_DIR$/venv/src/SCLIB.py" />
-        <option value="$PROJECT_DIR$/venv/src/opt.py" />
         <option value="$PROJECT_DIR$/venv/src/setupInv.py" />
+        <option value="$PROJECT_DIR$/venv/src/opt.py" />
         <option value="$PROJECT_DIR$/venv/src/ui.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="113" />
     <option name="y" value="39" />
     <option name="width" value="1443" />
@@ -257,33 +272,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>896</line>
+          <line>897</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>267</line>
+          <line>268</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>273</line>
+          <line>274</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>274</line>
+          <line>275</line>
           <option name="timeStamp" value="274" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>275</line>
+          <line>276</line>
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/src/ui.py</url>
-          <line>225</line>
-          <option name="timeStamp" value="322" />
+          <line>216</line>
+          <option name="timeStamp" value="324" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -293,7 +308,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="324" />
+      <option name="time" value="325" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -743,32 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/worksheet/worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7293">
-          <caret line="429" selection-start-line="429" selection-end-line="429" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="249" column="30" lean-forward="true" selection-start-line="249" selection-start-column="30" selection-end-line="249" selection-end-column="30" />
-          <folding>
-            <element signature="e#1002#1092#0" />
-            <element signature="e#1178#1303#0" />
-            <element signature="e#1364#4062#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -777,6 +766,38 @@
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#2768#2867#0" />
             <element signature="e#2892#3012#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/openpyxl/worksheet/worksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/opt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="115" column="4" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="30" />
+          <folding>
+            <element signature="e#137#1012#0" />
+            <element signature="e#1036#1919#0" />
+            <element signature="e#1944#3143#0" />
+            <element signature="e#3168#4384#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/src/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="221" column="21" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="21" />
+          <folding>
+            <element signature="e#1002#1092#0" />
+            <element signature="e#1178#1303#0" />
+            <element signature="e#1364#4062#0" />
           </folding>
         </state>
       </provider>
