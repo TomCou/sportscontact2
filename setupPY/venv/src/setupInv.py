@@ -487,10 +487,10 @@ def job(t):
         finalDict['CHEERFEMME'] = cheerWM
 
         finalDictForFiles = finalDict
+        json.dump(finalDict,src_file)
         del finalDictForFiles['Items']
 
 
-        json.dump(finalDict,src_file)
 
 
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/db.json')):
