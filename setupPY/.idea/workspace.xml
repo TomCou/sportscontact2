@@ -29,8 +29,8 @@
       <file leaf-file-name="setupInv.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="508" column="69" lean-forward="true" selection-start-line="508" selection-start-column="69" selection-end-line="508" selection-end-column="69" />
+            <state relative-caret-position="442">
+              <caret line="513" lean-forward="true" selection-start-line="513" selection-end-line="513" />
               <folding>
                 <element signature="e#20#29#0" expanded="true" />
                 <element signature="e#2768#2867#0" />
@@ -105,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1443" />
@@ -228,7 +228,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119642854" />
@@ -793,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/src/setupInv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="508" column="69" lean-forward="true" selection-start-line="508" selection-start-column="69" selection-end-line="508" selection-end-column="69" />
+        <state relative-caret-position="442">
+          <caret line="513" lean-forward="true" selection-start-line="513" selection-end-line="513" />
           <folding>
             <element signature="e#20#29#0" expanded="true" />
             <element signature="e#2768#2867#0" />
