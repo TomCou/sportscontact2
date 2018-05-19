@@ -503,14 +503,15 @@ def job(t):
 
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
+    print('Done App Update: '+ str(datetime.now()))
 
     try:
         makeInvFile(data=finalDictForFiles,chORsn="HB") #charlesbourg
         makeInvFile(data=finalDictForFiles,chORsn="SN") #saint-nicolas
+        print('Done File Update: '+ str(datetime.now()))
     except Exception as e:
         print(e," in Job")
 
-    print('Done: '+ str(datetime.now()))
 
 
 job(time.localtime(1))
