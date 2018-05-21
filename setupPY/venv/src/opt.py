@@ -11,7 +11,7 @@ class O:
                       'socAD_tur_R',
                       'socAD_ind_R',
                       'socAD_out_R',
-                      'socWAD_R',
+                      'socWAD_out_R',
                     'baseJR_R',
                     'baseAD_R',
                       'bbJR_R',
@@ -37,7 +37,7 @@ class O:
                          'socAD_tur',
                          'socAD_ind',
                          'socAD_out',
-                         'socWAD',
+                         'socWAD_out',
                         'baseJR',
                         'baseAD',
                          'bbJR',
@@ -64,7 +64,7 @@ class O:
                         'socAD_tur':'socAD_tur_R',
                         'socAD_ind':'socAD_ind_R',
                         'socAD_out':'socAD_out_R',
-                        'socWAD':'socWAD_R',
+                        'socWAD_out':'socWAD_out_R',
                         'baseJR':'baseJR_R',
                         'baseAD':'baseAD_R',
                         'bbJR':'bbJR_R',
@@ -91,7 +91,7 @@ class O:
                         'socAD_tur_R':'socAD_tur',
                         'socAD_ind_R':'socAD_ind',
                         'socAD_out_R':'socAD_out',
-                        'socWAD_R':   'socWAD',
+                        'socWAD_out_R':'socWAD_out',
                         'baseJR_R':'baseJR',
                         'baseAD_R':'baseAD',
                         'bbJR_R':     'bbJR',
@@ -163,20 +163,6 @@ class O:
         "17": 50,
         "18": 51,
         "": -1}
-
-
-
-
-
-        # columnStyle = {"A":
-    #                    {"Font":
-    #                         {"name":,"size":}
-    #                     },
-    #                 "B":{},
-    #                "C":{},
-    #                "D":{},
-    #                "EtoAZ":}
-    # cellStyle={"Title":{"font"}}
 
     scSoulierFileCH='inv_soulier_HB'
     scSoulierFileSN = 'inv_soulier_SN'
