@@ -419,7 +419,7 @@ class RWHANDLE(object):
             prevSheet.title = currSheetTitle+'_old'
             #self.wb.create_sheet(index=0, title=currSheetTitle)
             #newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
-            newSheetName=self.wb.copy_worksheet(self.wb['TEMPLATE'])
+            newSheetName=self.wb.copy_worksheet(self.wb.get_sheet_by_name('TEMPLATE'))
             newSheet=self.wb[newSheetName]
             newSheet.title(currSheetTitle)
             prevSheet = self.wb[currSheetTitle+'_old']#that verifies that it is in the wb
