@@ -421,7 +421,7 @@ class RWHANDLE(object):
             #newSheet = self.wb[currSheetTitle]#.get_sheet_by_name(currSheetTitle)
             nnsheet = self.wb.get_sheet_by_name('TEMPLATE')
             newSheet=self.wb.copy_worksheet(nnsheet)
-            newSheet.title(currSheetTitle)
+            newSheet.title = currSheetTitle
             prevSheet = self.wb[currSheetTitle+'_old']#that verifies that it is in the wb
 
             for row_num in range(1, indexStartRow):
