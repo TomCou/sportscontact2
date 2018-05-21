@@ -483,8 +483,8 @@ def job(t):
 
         finalDict['CHEERFILLE'] = cheerGR
         finalDict['CHEERFEMME'] = cheerWM
-
         finalDictForFiles = finalDict
+        finalDict={}
         json.dump(finalDict,src_file)
         del finalDictForFiles['Items']
 
