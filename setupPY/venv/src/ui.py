@@ -1009,7 +1009,6 @@ class ORDER(object):
             self.id=rwh.idr
             self.po=rwh.po
         return self.id
-
 class popupWindowAttachFile(object):
     def __init__(self, master):
         top = self.top = Toplevel(master)
@@ -1310,7 +1309,6 @@ def uploadingToBC(threadName,curRowID,updateGUI,*fileNames):
         bcBr.processOrder_bc(fileNames)
     except:
         print('Basecamp, trouble in paradise, in ui.py - uploadingToBC()')
-
 class popup:
 
     def __init__(self):
@@ -1377,7 +1375,6 @@ class popup:
         rwh= RWHANDLE(o.infoFile, o.colHomeList)
         listOfLocations= rwh.collectFromDB(typeOfData=o.listCol,colOfValues=o.colHomeList)
         return listOfLocations
-
 class FP_ITEM(object):
     def __init__(self,QTY,MANU,DES,PRI,DateRec,mth,day,year,orderID):
         #set(QTY,MANU,DES,PRI,DateRec)
@@ -1409,7 +1406,6 @@ class FP_ITEM(object):
 
     def get(self,query):
         return self.footObj.get(query, default=0)
-
 class ISSUE():
     def get(self,query):
         return self.issueItems.get(query, default=0)

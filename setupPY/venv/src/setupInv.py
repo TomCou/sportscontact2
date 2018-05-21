@@ -440,7 +440,6 @@ def job(t):
         sandWM = []
         sandWM.extend(orgDict['SANDALES']['SANDALES']['FEMME']['MISC'])
 
-
         finalDict['BASEBALLHOMME']=baseAD
         finalDict['BASEBALLFEMME']=baseWM
         finalDict['BASEBALLJUNIOR']=baseJR
@@ -487,8 +486,6 @@ def job(t):
         finalDictForFiles = finalDict
         json.dump(finalDict,src_file)
         del finalDictForFiles['Items']
-
-
 
 
     if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/db.json')):
