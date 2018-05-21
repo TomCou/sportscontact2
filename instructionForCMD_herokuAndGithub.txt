@@ -1,0 +1,8 @@
+heroku login
+Enter your Heroku credentials:
+Email: tommy.cousineau.tc@gmail.com
+Password: Dtw4571s
+
+heroku git:remote -a sportscontact
+
+git push heroku master
