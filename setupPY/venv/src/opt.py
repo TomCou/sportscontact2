@@ -5,6 +5,7 @@ class O:
     cdpCol=0
     unbrandedItemAddingRow=3
     maxShoesSheetRow=300
+    defaultShoeFile= 'inv_soulier'
     listOfDepartmentR=['socJR_tur_R',
                       'socJR_ind_R',
                       'socJR_out_R',

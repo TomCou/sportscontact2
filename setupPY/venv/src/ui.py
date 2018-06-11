@@ -133,7 +133,13 @@ class RWHANDLE(object):
             self.dictDepRvN =o.dictNameOfDepRtoN
 
             try:
-                self.wb = openpyxl.load_workbook(filePath + '.xlsx', data_only=True)  # ,formatting_info=True)
+                try:
+                    self.wb = openpyxl.load_workbook(filePath + '.xlsx', data_only=True)  # ,formatting_info=True)
+                except Exception as e:
+                    debug(str(e) + ",Trying to open .xlsx file, Location -- ui, RWHANDLE, __init__()")
+                    debug("Copying default file, and saving it as "+filePath + '.xlsx')
+                    self.wb = openpyxl.load_workbook(o.defaultShoeFile + '.xlsx', data_only=True)
+
                 # debug(str(e) + " I am in ui, __init__()")
                 # self.wb = self.xls2xlsx(filePath + '.xls')
                 self.rss = {}
