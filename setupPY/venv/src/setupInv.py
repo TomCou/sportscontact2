@@ -496,20 +496,20 @@ def job(t):
     with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
         data2 = json.load(data_file)
     logFile=open("C:/Users/developmentPC/Documents/dev/sportscontact/log.txt","a")
-    logFile.write('DONE Updating App files: ' + str(datetime.now()))
+    logFile.write('\nDONE Updating App files: ' + str(datetime.now()))
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
     try:
-        logFile.write('DONE Updating Git database: ' + str(datetime.now()))
+        logFile.write('\nDONE Updating Git database: ' + str(datetime.now()))
         print('DONE Updating Git database: ' + str(datetime.now()))
         makeInvFile(data=finalDictForFiles,chORsn="HB") #charlesbourg
         makeInvFile(data=finalDictForFiles,chORsn="SN") #saint-nicolas
-        logFile.write('DONE File Update: '+ str(datetime.now()))
+        logFile.write('\nDONE File Update: '+ str(datetime.now()))
         logFile.close()
         print('DONE File Update: '+ str(datetime.now()))
     except Exception as e:
-        logFile.write('IMCOMPLETE File Update: '+e+" in Job" + str(datetime.now()))
+        logFile.write('\nIMCOMPLETE File Update: '+e+" in Job" + str(datetime.now()))
         logFile.close()
         print('IMCOMPLETE File Update: '+e+" in Job" + str(datetime.now()))
 
