@@ -509,9 +509,9 @@ def job(t):
         logFile.close()
         print('DONE File Update: '+ str(datetime.now()))
     except Exception as e:
-        logFile.write('\nIMCOMPLETE File Update: '+e+" in Job" + str(datetime.now()))
+        logFile.write('\nIMCOMPLETE File Update: '+str(e)+" in Job" + str(datetime.now()))
         logFile.close()
-        print('IMCOMPLETE File Update: '+e+" in Job" + str(datetime.now()))
+        print('IMCOMPLETE File Update: '+str(e)+" in Job" + str(datetime.now()))
 
 
 

@@ -138,7 +138,7 @@ class RWHANDLE(object):
                 except Exception as e:
                     debug(str(e) + ",Trying to open .xlsx file, Location -- ui, RWHANDLE, __init__()")
                     debug("Copying default file, and saving it as "+filePath + '.xlsx')
-                    self.wb = openpyxl.load_workbook(o.defaultShoeFile + '.xlsx', data_only=True)
+                    self.wb = openpyxl.load_workbook('C:/Users/developmentPC/Documents/dev/sportscontact/setupPY/venv/src/inv_soulier.xlsx', data_only=True)
 
                 # debug(str(e) + " I am in ui, __init__()")
                 # self.wb = self.xls2xlsx(filePath + '.xls')
