@@ -496,11 +496,10 @@ def job(t):
     with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
         data2 = json.load(data_file)
     logFile=open("C:/Users/developmentPC/Documents/dev/sportscontact/log.txt","a")
-    logFile.write('DONE Updating files: ' + str(datetime.now()))
+    logFile.write('DONE Updating App files: ' + str(datetime.now()))
     p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact/cmdForPush.bat', shell=True)
     p.wait()
 
-    logFile=open("C:/Users/developmentPC/Documents/dev/sportscontact/log.txt","a")
     try:
         logFile.write('DONE Updating Git database: ' + str(datetime.now()))
         print('DONE Updating Git database: ' + str(datetime.now()))
