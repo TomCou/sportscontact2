@@ -333,7 +333,10 @@ def job(t):
         baseAD.extend(orgDict['BASEBALL']['SOULIERS']['HOMME']['N2000784'])
         baseJR=[]
         baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['MISC'])
-        baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
+        try:
+            baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
+        except:
+            print('there is no N2000786 -- line 339 in setupInv.py')
         baseGR=[]
         baseGR.extend(orgDict['BASEBALL']['SOULIERS']['GIRL']['MISC'])
         baseWM=[]
@@ -411,9 +414,15 @@ def job(t):
         courseWM = []
         courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['MISC'])
         courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000501'])
-        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000504'])
+        try:
+            courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000504'])
+        except:
+            pass
         courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000506'])
-        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000503'])
+        try:
+            courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000503'])
+        except:
+            pass
         courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000502'])
         # COURTETVOLLEYBALL x 2
         volleyAD = []
