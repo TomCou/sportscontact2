@@ -15,7 +15,7 @@ set _my_datetime=%date%_%time%
 
 git commit -m "this is a commitment - %_my_datetime%"
 
-git push https://TomCou:dtw4571s@github.com/TomCou/sportscontact2.git master
+git push https://TomCou:dtw4571s@github.com/TomCou/sportscontact2.git master --force
 
 git push heroku master
 
