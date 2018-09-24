@@ -1,7 +1,4 @@
 
-
-
-
 #commande for pushing changes
 
 git commit -m "this is a commitment - %_my_datetime%"
