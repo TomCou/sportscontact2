@@ -111,8 +111,8 @@ def isint(self, x):
 
 def job(t):
 
-    shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/dbPre.json')
-    shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact/exportinvtxt.txt')
+    shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact2/dbPre.json')
+    shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact2/exportinvtxt.txt')
     aList = []
     finalDict = {'Items':aList}
     orgDict = {}
@@ -142,11 +142,11 @@ def job(t):
     checkSizeDict = {'Items':checkSizeList}
 
 
-    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')):
-        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json')
+    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/dbW.json')):
+        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact2/dbW.json')
     #data = json.load(open('dbPre.json'))
-    with open('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json', 'w') as src_file:
-        with open('C:/Users/developmentPC/Documents/dev/sportscontact/dbPre.json', 'r') as data_file:
+    with open('C:/Users/developmentPC/Documents/dev/sportscontact2/dbW.json', 'w') as src_file:
+        with open('C:/Users/developmentPC/Documents/dev/sportscontact2/dbPre.json', 'r') as data_file:
             data = json.load(data_file)
             for theList, product in data.items(): #got the single list of items
                 ind = -1
@@ -497,16 +497,16 @@ def job(t):
         del finalDictForFiles['Items']
 
 
-    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact/db.json')):
-        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact/db.json')
+    if(os.path.isfile('C:/Users/developmentPC/Documents/dev/sportscontact2/db.json')):
+        os.remove('C:/Users/developmentPC/Documents/dev/sportscontact2/db.json')
 
-    shutil.copy2('C:/Users/developmentPC/Documents/dev/sportscontact/dbW.json','C:/Users/developmentPC/Documents/dev/sportscontact/db.json')
+    shutil.copy2('C:/Users/developmentPC/Documents/dev/sportscontact2/dbW.json','C:/Users/developmentPC/Documents/dev/sportscontact2/db.json')
 
-    with open('C:/Users/developmentPC/Documents/dev/sportscontact/db.json', 'r') as data_file:
+    with open('C:/Users/developmentPC/Documents/dev/sportscontact2/db.json', 'r') as data_file:
         data2 = json.load(data_file)
-    logFile=open("C:/Users/developmentPC/Documents/dev/sportscontact/log.txt","a")
+    logFile=open("C:/Users/developmentPC/Documents/dev/sportscontact2/log.txt","a")
     logFile.write('\nDONE Updating App files: ' + str(datetime.now()))
-    p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact/cmdForPush.bat', shell=True)
+    p = subprocess.Popen(r'start cmd /c C:/Users/developmentPC/Documents/dev/sportscontact2/cmdForPush.bat', shell=True)
     p.wait()
 
     try:
