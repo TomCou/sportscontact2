@@ -418,12 +418,18 @@ def job(t):
             courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000504'])
         except:
             pass
-        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000506'])
+        try:
+            courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000506'])
+        except:
+            pass
         try:
             courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000503'])
         except:
             pass
-        courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000502'])
+        try:
+            courseWM.extend(orgDict['COURSEAPIED']['SOULIERS']['FEMME']['N2000502'])
+        except:
+            pass
         # COURTETVOLLEYBALL x 2
         volleyAD = []
         #volleyAD.extend(orgDict['COURTETVOLLEYBALL']['SOULIERS']['MISC'])
