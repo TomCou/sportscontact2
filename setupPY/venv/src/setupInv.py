@@ -336,7 +336,7 @@ def job(t):
         try:
             baseJR.extend(orgDict['BASEBALL']['SOULIERS']['JUNIOR']['N2000786'])
         except:
-            print('there is no N2000786 -- line 339 in setupInv.py')
+            pass
         baseGR=[]
         baseGR.extend(orgDict['BASEBALL']['SOULIERS']['GIRL']['MISC'])
         baseWM=[]
