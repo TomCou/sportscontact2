@@ -448,7 +448,7 @@ def job(t):
         cheerGR.extend(orgDict['CHEERLEADING']['SOULIERS']['GIRL']['MISC'])
         # SANDALES x 4
         sandAD = []
-        sandAD.extend(orgDict['SANDALES']['SANDALES']['MISC'])
+        # sandAD.extend(orgDict['SANDALES']['SANDALES']['MISC'])
         sandAD.extend(orgDict['SANDALES']['SANDALES']['HOMME']['MISC'])
         sandJR = []
         sandJR.extend(orgDict['SANDALES']['SANDALES']['JUNIOR']['MISC'])
