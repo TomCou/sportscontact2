@@ -114,7 +114,7 @@ def job(t):
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact2/dbPre.json')
     shutil.copy2('//SCONTACTSRV/Public/Commun/Export inv rpp/exportinvtxt.txt','C:/Users/developmentPC/Documents/dev/sportscontact2/exportinvtxt.txt')
     aList = []
-    finalDict = {'Items':aList}
+    finalDict = {'Items':aList,'ItemsRaw':[]}
     orgDict = {}
 
     femmeOptions=['N1000538','N1000642','N1000512','N1000629','N1000505','N1000500','02','1']
@@ -148,28 +148,30 @@ def job(t):
     with open('C:/Users/developmentPC/Documents/dev/sportscontact2/dbW.json', 'w') as src_file:
         with open('C:/Users/developmentPC/Documents/dev/sportscontact2/dbPre.json', 'r') as data_file:
             data = json.load(data_file)
+            data_raw = {'ItemsRaw':[]}
             for theList, product in data.items(): #got the single list of items
                 ind = -1
                 for art in data[theList]: #each item in the list is a dict
-                    if((art['qty_hb'] > 0) or (art['qty_sn'] > 0) ):
-                        ind = ind + 1
-                        #print(art['cdp'])
-                        art['cdp']= art['cdp'].strip(" ")
-                        art['cdp']=art['cdp'].replace(' ','')#cleanAtt(art['cdp'])
-                        art['niv1']=art['niv1'].strip(" ")
-                        art['niv2'] = art['niv2'].strip(" ")
-                        art['dep'] = art['dep'].strip(" ")
-                        art['sdep'] = art['sdep'].strip(" ")
+                    ind = ind + 1
+                    #print(art['cdp'])
+                    art['cdp']= art['cdp'].strip(" ")
+                    art['cdp']=art['cdp'].replace(' ','')#cleanAtt(art['cdp'])
+                    art['niv1']=art['niv1'].strip(" ")
+                    art['niv2'] = art['niv2'].strip(" ")
+                    art['dep'] = art['dep'].strip(" ")
+                    art['sdep'] = art['sdep'].strip(" ")
 
-                        art['niv1'] = art['niv1'].replace(' ', '')  # cleanAtt(art['cdp'])
-                        art['niv2'] = art['niv2'].replace(' ', '')  # cleanAtt(art['cdp'])
-                        art['dep'] = art['dep'].replace(' ', '')  # cleanAtt(art['cdp'])
-                        art['sdep'] = art['sdep'].replace(' ', '')  # cleanAtt(art['cdp'])
+                    art['niv1'] = art['niv1'].replace(' ', '')  # cleanAtt(art['cdp'])
+                    art['niv2'] = art['niv2'].replace(' ', '')  # cleanAtt(art['cdp'])
+                    art['dep'] = art['dep'].replace(' ', '')  # cleanAtt(art['cdp'])
+                    art['sdep'] = art['sdep'].replace(' ', '')  # cleanAtt(art['cdp'])
 
-                        ## id VS. ID
-                        art['id'] = art['ID']
-                        del art['ID']
+                    ## id VS. ID
+                    art['id'] = art['ID']
+                    del art['ID']
 
+                    data_raw['ItemsRaw'].append(art)
+                    if ((art['qty_hb'] > 0) or (art['qty_sn'] > 0)):
                         ## SOULIER VS. SOULIERS
                         if art['sdep']=='SOULIER':
                             art['sdep']='SOULIERS'
@@ -324,6 +326,7 @@ def job(t):
                             print(art)
 
                         finalDict['Items'].append(art)
+                    finalDict['ItemsRaw'].append(art)
 
         # BASEBALL X 4 - 4 NIV1
         baseAD=[]
